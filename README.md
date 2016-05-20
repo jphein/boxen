@@ -11,8 +11,8 @@ Requirements: Two real metal computers.
 To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the below in a root terminal.
 
 ```sh
-apt-get install git
-git clone https://github/jphein/boxen /
+apt-get install git #To install packages.
+git clone https://github/jphein/boxen /   #To download and install configs. To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
 ```
 Or,
 Use the custom ISO: <isolink>
