@@ -1,10 +1,12 @@
-# boXenLinux - A Linux distribution based on Ubuntu for nonprofits. 
+# boXenLinux - A redundant Linux distribution based on Ubuntu for nonprofits. 
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
 Linux, Windows, and MacOS using ldm, xfreerdp, and xtightvncviwer respectively.
 It also, provides fatclients for Ubuntu Desktop.
 [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice.
 It uses GlusterFS for clustered storage and CTDB for shares.
+
+Requirements: Two real metal computers. 
 
 To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the below in a root terminal.
 
@@ -14,6 +16,8 @@ git clone https://github/jphein/boxen /
 ```
 Or,
 Use the custom ISO: <isolink>
+
+Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more.
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
