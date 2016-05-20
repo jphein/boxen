@@ -6,12 +6,14 @@ It also, provides fatclients for Ubuntu Desktop.
 [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice.
 It uses GlusterFS for clustered storage and CTDB for shares.
 
-1. To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu].
-2.
+To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the below in a root terminal.
+
 ```sh
 apt-get install git
+git clone https://github/jphein/boxen /
 ```
-3. git pull https://github/jphein/boxen
+Or,
+Use the custom ISO: <isolink>
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
