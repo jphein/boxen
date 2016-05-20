@@ -19,6 +19,11 @@ Use the custom ISO: <isolink>
 
 Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more.
 
+You many want to run this command after boXenLinux is installed to enable a firewall.
+CAUTION: You need to setup rules first. This could disconnect you, if you are using SSH to install.
+```sh
+ufw enable
+```
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 [git]: <https://github.com>
