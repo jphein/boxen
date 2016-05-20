@@ -1,4 +1,4 @@
-# boXenLinux - A redundant Linux distribution based on Ubuntu for nonprofits. 
+# boXenLinux&copy;- A redundant Linux distribution based on Ubuntu for nonprofits. 
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
 Linux, Windows, and MacOS using ldm, xfreerdp, and xtightvncviwer respectively.
