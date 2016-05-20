@@ -8,19 +8,22 @@ It uses GlusterFS for clustered storage and CTDB for shares.
 
 Requirements: Two real metal computers. 
 
-To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the below in a terminal.
+To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD. 
+Then run the below in a terminal.
 
 ```sh
 sudo apt-get install git #To install packages.
 #To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
 sudo git init
-sudo git remote add origin https://github/jphein/boxen
+sudo git remote add origin https://github.com/jphein/boxen
 sudo git fetch
 sudo git reset origin/master
 sudo git checkout -t origin/master
 ```
 Or,
-Use the custom ISO: <isolink>
+Use the custom Liveimage: <isolink>
+
+For a headless install: PXE boot using existing boXen Linux server. Use the above iso image.
 
 Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more.
 
