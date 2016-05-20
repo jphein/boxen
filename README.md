@@ -8,11 +8,16 @@ It uses GlusterFS for clustered storage and CTDB for shares.
 
 Requirements: Two real metal computers. 
 
-To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the below in a root terminal.
+To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the below in a terminal.
 
 ```sh
-apt-get install git #To install packages.
-git clone https://github/jphein/boxen /   #To download and install configs. To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
+sudo apt-get install git #To install packages.
+#To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
+git init
+git remote add origin https://github/jphein/boxen
+git fetch
+git reset origin/master
+git checkout -t origin/master
 ```
 Or,
 Use the custom ISO: <isolink>
@@ -22,7 +27,7 @@ Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or mor
 You many want to run this command after boXenLinux is installed to enable a firewall.
 CAUTION: You need to setup rules first. This could disconnect you, if you are using SSH to install.
 ```sh
-ufw enable
+sudo ufw enable
 ```
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
