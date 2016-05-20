@@ -13,11 +13,11 @@ To install use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu]. Then run the 
 ```sh
 sudo apt-get install git #To install packages.
 #To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
-git init
-git remote add origin https://github/jphein/boxen
-git fetch
-git reset origin/master
-git checkout -t origin/master
+sudo git init
+sudo git remote add origin https://github/jphein/boxen
+sudo git fetch
+sudo git reset origin/master
+sudo git checkout -t origin/master
 ```
 Or,
 Use the custom ISO: <isolink>
