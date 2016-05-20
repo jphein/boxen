@@ -12,18 +12,18 @@ To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD.
 Then run the below in a terminal.
 
 ```sh
-sudo apt-get install git #To install packages.
+sudo apt-get install git ltsp-server-standaline #To install packages.
 #To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
-sudo git init
-sudo git remote add origin https://github.com/jphein/boxen
-sudo git fetch
-sudo git reset origin/master
-sudo git checkout -t origin/master
+rm /etc/ltsp/dhcp.conf
+git init
+git remote add origin https://github.com/jphein/boxen
+git pull origin master
 ```
 Or,
 Use the custom Liveimage: <isolink>
 
-For a headless install: PXE boot using existing boXen Linux server. Use the above iso image.
+For a headless install: PXE boot using existing boXen Linux server. Uses custom ubuntu mini iso as described here: <https://help.ubuntu.com/community/Installation/NetworkConsole> 
+image<http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/current/images/netboot/mini.iso>
 
 Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more.
 
