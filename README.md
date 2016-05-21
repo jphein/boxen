@@ -6,6 +6,7 @@ It also, provides fatclients for Ubuntu Desktop.
 [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice.
 It uses GlusterFS for clustered storage and CTDB for shares.
 Epoptes provides management and live interaction with all clients.
+Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more. Make into a .deb package.
 Requirements: Two real metal computers. 
 
 To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD. 
@@ -41,8 +42,6 @@ Add to your /etc/ltsp/dhcpd.conf
 Then
 ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
 Then run the above steps as if you were installing with CD
-
-Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more. Make into a .deb package.
 
 You many want to run this command after boXenLinux is installed to enable a firewall.
 CAUTION: You need to setup rules first. This could disconnect you, if you are using SSH to install.
