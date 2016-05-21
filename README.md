@@ -22,8 +22,17 @@ git pull origin master
 Or,
 Use the custom Liveimage: <isolink>
 
-For a headless install: PXE boot using existing boXen Linux server. Uses custom ubuntu mini iso as described here: <https://help.ubuntu.com/community/Installation/NetworkConsole> 
-image<http://archive.ubuntu.com/ubuntu/dists/xenial/main/installer-amd64/current/images/netboot/mini.iso>
+For a headless install: 
+PXE boot using existing boXen Linux server: 
+http://blog.dustinkirkland.com/2011/03/ubuntu-server-quick-install-no.html
+Add to your /etc/ltsp/dhcpd.conf
+```sh
+[<mac address>]
+ filename /ubuntu-installer/amd64/pxelinux.0
+```
+Then
+
+ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
 
 Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more.
 
