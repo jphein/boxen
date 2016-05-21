@@ -42,7 +42,7 @@ Then
 ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
 Then run the above steps as if you were installing with CD
 
-Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more.
+Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more. Make into a .deb package.
 
 You many want to run this command after boXenLinux is installed to enable a firewall.
 CAUTION: You need to setup rules first. This could disconnect you, if you are using SSH to install.
