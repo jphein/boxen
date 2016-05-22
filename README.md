@@ -13,8 +13,8 @@ To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD.
 Then run the below in a terminal.
 
 ```sh
-sudo apt-get install git byobu ltsp-server-standalone qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils epoptes#To install packages.
-sudo adduser `id -un` libvirtd
+sudo apt-get install git byobu ltsp-server-standalone qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager epoptes#To install packages.
+#sudo adduser `id -un` libvirtd
 sudo gpasswd `id -un` epoptes
 #To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
 rm /etc/ltsp/dhcp.conf
