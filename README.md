@@ -30,13 +30,10 @@ mkdir /mnt/vms-pool
 #Bridge
 
 ```
-Or,
-Use the custom Liveimage: <isolink>
 
-Or,
-For a headless install: 
-PXE boot using existing boXen Linux server: 
-<http://blog.dustinkirkland.com/2011/03/ubuntu-server-quick-install-no.html>
+To install on the second server or for a headless install: 
+PXE boot using existing boXen or LTSP server: 
+
 Add to your /etc/ltsp/dhcpd.conf
 ```sh
 [<mac address>]
