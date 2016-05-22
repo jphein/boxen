@@ -25,8 +25,9 @@ ltsp-build-client --fatclient
 git pull origin master
 ltsp-update-image
 sudo gluster peer probe boxen2
-sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/gluster-storage force
-mkdir /mnt/vms-pool
+sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/vms force
+sudo gluster volume create vms replica 2 transport tcp boxen1:/storage boxen2:/storage force
+mkdir /mnt/vms-pool /mnt/storage-pool
 #Bridge
 
 ```
