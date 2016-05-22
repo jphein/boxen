@@ -13,7 +13,7 @@ To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD.
 Then run the below in a terminal.
 
 ```sh
-sudo apt-get install git byobu ltsp-server-standalone qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager epoptes#To install packages.
+sudo apt-get install git byobu ltsp-server-standalone qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager epoptes glusterfs-server#To install packages.
 #sudo adduser `id -un` libvirtd
 sudo gpasswd `id -un` epoptes
 #To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
@@ -24,6 +24,9 @@ git pull https://github.com/jphein/boxen/etc/ltsp/ltsp-build-client.conf
 ltsp-build-client --fatclient
 git pull origin master
 ltsp-update-image
+sudo gluster peer probe boxen2
+sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/gluster-storage force
+mkdir /mnt/vms-pool
 #Bridge
 
 ```
