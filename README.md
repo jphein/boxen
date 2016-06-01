@@ -8,8 +8,7 @@ It uses GlusterFS for clustered storage and CTDB for shares.
 Epoptes provides management and live interaction with all clients.
 Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more. Make into a .deb package.
 Requirements: Two real metal computers. 
-Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org
-
+Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org
 To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD. 
 Then run the below in a terminal.
 
