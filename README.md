@@ -1,5 +1,7 @@
-# BoXenLinux&copy;- An Ubuntu based Linux distribution for Nonprofits. 
+# BoXenLinux &copy;
+An Ubuntu based Linux distribution for Nonprofits
 
+Files contained within this repository:
 
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
