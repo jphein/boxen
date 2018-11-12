@@ -1,0 +1,18 @@
+#!/bin/bash
+#(sleep 1 && wmctrl -F -a "Username" -b add,above) &
+#(sleep 1 && wmctrl -F -a "Password" -b add,above) &
+#(while ! wmctrl -F -a "Username" -b add,above;do sleep 1;done) &
+
+#wm2 & # No Window decorations
+
+zenity --text-info --title="Welcome to BoXen Linux" --width=600 --height=800  --html --url="https://jphein.com/boxen" 
+xfreerdp $* \
+/u:$(zenity \
+--entry \
+--title="Username" \
+--text="Please enter your first name:") \
+/p:$(zenity \
+--entry \
+--title="Passphrase" \
+--text="Please enter your _passphrase:" \
+--hide-text) \
