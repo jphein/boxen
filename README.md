@@ -2,6 +2,14 @@
 An Ubuntu based Linux distribution for Nonprofits
 
 Files contained within this repository:
+/var/lib/tftpboot/ltsp/amd64/lts.conf #Menu driven Desktop chooser
+/etc/ltsp/ltsp-build-client.conf      #Build your LTSP client image with the greek schools repo, xfreerdp-nightly, and epoptes.
+/opt/ltsp/amd64/usr/share/ltsp/screen.d/xfreerdp-nightly #Symlink to xfreerdp if you want to run nightlies.
+/opt/ltsp/amd64/usr/share/ltsp/screen.d/rdpgui           #To prompt for creds needs xfreerdp-prompt as well. 
+/opt/ltsp/amd64/usr/share/ltsp/screen.d/xfreerdp-prompt  #To prompt for cred using xfreerdp-nightly.
+/opt/ltsp/amd64/usr/share/ltsp/screen.d/vdi              #KVM-VDI LTSP client, see https://github.com/Seitanas/kvm-vdi/
+/opt/ltsp/amd64/usr/share/ltsp/screen.d/vncviewer        #Vnc
+/opt/ltsp/amd64/usr/share/ltsp/screen.d/remote-viewer    #Spice
 
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
