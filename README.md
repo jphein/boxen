@@ -43,11 +43,12 @@ It also, provides fatclients for Ubuntu Desktop.
 [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice.
 It uses GlusterFS for clustered storage and CTDB for shares.
 Epoptes provides management and live interaction with all clients.
+
 Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more. Make into a .deb package. Create LiveCD, and PXE LiveBoot.
-Requirements: Two real metal computers. 
+
 Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
-To install, use an [Ubuntu LiveCD for Ubuntu 16.04 Server][Ubuntu] LiveCD. 
+To install, use an [Ubuntu LiveCD for Ubuntu 18.04.01 Desktop][Ubuntu] LiveCD iso. 
 Then run the below in a terminal.
 
 ```sh
