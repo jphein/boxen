@@ -12,6 +12,8 @@ Files contained within this repository:
 /opt/ltsp/amd64/usr/share/ltsp/screen.d/vncviewer        #Vnc
 /opt/ltsp/amd64/usr/share/ltsp/screen.d/remote-viewer    #Spice
 ```
+Ubuntu and LTSP can provide a platform for providing desktops in many different ways.
+LTSP already comes with these client scipts: kiosk ldm menu rdesktop shell ssh startx telnet xdmcp xfreerdp xterm. This has been further by me with: freerdp-nightly rdpgui vdi vnc spice
 
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
