@@ -35,6 +35,7 @@ rdpgui – Gui for displaying a welcome website, and to prompt for credentials w
 vdi – KVM-VDI LTSP client, see github.com/Seita…
 vnc – VNCviewer for remote desktop on local or remote Android or MacOS computers.
 spice – virt-viewer for KVM Virtualization software. Can provide remote access to local or remote desktops of ANY kind you can virtualize.
+x2go - Linux remote desktop for local or remote servers. 
 ```
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
