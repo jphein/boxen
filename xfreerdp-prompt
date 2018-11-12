@@ -6,7 +6,7 @@
 #wm2 & # No Window decorations
 
 zenity --text-info --title="Welcome to BoXen Linux" --width=600 --height=800  --html --url="https://jphein.com/boxen" 
-xfreerdp $* \
+xfreerdp-nightly $* \
 /u:$(zenity \
 --entry \
 --title="Username" \
