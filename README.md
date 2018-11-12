@@ -14,9 +14,28 @@ Files contained within this repository:
 /opt/ltsp/amd64/usr/share/ltsp/screen.d/vncviewer        #Vnc
 /opt/ltsp/amd64/usr/share/ltsp/screen.d/remote-viewer    #Spice
 ```
-Ubuntu and LTSP can provide a platform for providing desktops in many different ways.
-LTSP already comes with these client scipts: kiosk ldm menu rdesktop shell ssh startx telnet xdmcp xfreerdp xterm. This has been further by me with: freerdp-nightly rdpgui vdi vnc spice
+Ubuntu and LTSP can provide a platform for providing desktops environments in many different ways.
 
+LTSP already comes with these client scripts:
+```sh
+kiosk – Firefox running locally on thin client.
+ldm – Linux desktop running remotely on local server.
+menu – Interactive Menu
+shell – Drop to root bash shell running locally on thin client.
+ssh – Secure Shell for remote terminal on local or remote server.
+telnet – unsecure ssh 😉 running remotely on local or remote server.
+xdmcp – Raw Xorg linux desktop running remotely on server.
+xfreerdp – RDP for Windows desktop running remotely on local or cloud server.
+xterm – xterm terminal running locally on thin client.
+```
+This has been furthered by my BoXen Linux project to include:
+```sh
+freerdp-nightly – Nightly builds of xfreerdp to take advantage of Microphone redirection and the latest graphics codecs.
+rdpgui – Gui for displaying a welcome website, and to prompt for credentials when using xfreerdp-nightly.
+vdi – KVM-VDI LTSP client, see github.com/Seita…
+vnc – VNCviewer for remote desktop on local or remote Android or MacOS computers.
+spice – virt-viewer for KVM Virtualization software. Can provide remote access to local or remote desktops of ANY kind you can virtualize.
+```
 Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
 [LTSP] provides thinclient driven session based remote desktop for:
 Linux, Windows, and MacOS using ldm, xfreerdp, and xtightvncviwer respectively.
