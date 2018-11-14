@@ -19,9 +19,11 @@ export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
 
 COMMAND="zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL $*"
 
-if [ "$?" -eq "0" ]
-then
+
 # The following logic is described at the top of xinitrc.
 exec xinit /usr/share/ltsp/xinitrc "$COMMAND" -- "$DISPLAY" "vt${TTY}" -nolisten tcp $X_ARGS >/dev/null
 
+if [ "$?" -eq "0" ]
+then
+exec xinit /usr/share/ltsp/xinitrc "/usr/share/ltsp/screen.d/menu" -- "$DISPLAY" "vt${TTY}" -nolisten tcp $X_ARGS >/dev/null
 fi
