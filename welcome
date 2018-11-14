@@ -17,7 +17,7 @@ export HOME=${HOME:-/root}
 # logout. If you don't want that, force XINITRC_DAEMON=False in lts.conf.
 export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
 
-COMMAND='zenity --text-info --title="$WELCOME_TITLE" --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url="$WELCOME_URL" $* '
+COMMAND="zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL $*"
 
 # The following logic is described at the top of xinitrc.
 exec xinit /usr/share/ltsp/xinitrc "$COMMAND" -- "$DISPLAY" "vt${TTY}" -nolisten tcp $X_ARGS >/dev/null
