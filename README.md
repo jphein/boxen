@@ -92,6 +92,7 @@ sudo ufw enable
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
+© 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
 
 [git]: <https://github.com>
 [KVM-VDI]: <https://github.com/Seitanas/kvm-vdi>  
