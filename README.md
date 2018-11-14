@@ -1,7 +1,9 @@
 # BoXenLinux&reg;
 An Ubuntu based Linux&reg; distribution for Nonprofits.
 
-It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. Ubuntu, LTSP, FreeRDP, and many others! It comes in both server (boxenbrain) and client (boxenbaby) variations. Boxenbrain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to install boxenbaby on them. 
+It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. Ubuntu, LTSP, FreeRDP, and many others! It comes in both server (boxenbrain) and client (boxenbaby) variations. Boxenbrain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to use boxenbaby with them. 
+
+BoxenLinux excels at providing thin and zero client driven remote desktop sessions. Linux, Windows, Android and MacOS using ldm, xfreerdp, and xtightvncviwer respectively. It can also provide fatclients for Ubuntu Desktop. [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice. It uses GlusterFS for clustered storage and CTDB for shares. Epoptes provides management and live interaction with all clients.
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
 
@@ -39,13 +41,6 @@ vnc – VNCviewer for remote desktop on local or remote Android or MacOS compute
 spice – virt-viewer for KVM Virtualization software. Can provide remote access to local or remote desktops of ANY kind you can virtualize.
 x2go - Linux remote desktop for local or remote servers. 
 ```
-Open source zeroclient VDI project based on Ubuntu Linux [LTSP] and [KVM-VDI]
-[LTSP] provides thinclient driven session based remote desktop for:
-Linux, Windows, and MacOS using ldm, xfreerdp, and xtightvncviwer respectively.
-It also, provides fatclients for Ubuntu Desktop.
-[KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice.
-It uses GlusterFS for clustered storage and CTDB for shares.
-Epoptes provides management and live interaction with all clients.
 
 Roadmap: Create live image for both server, and client. Create PXE menu installer for both client and server.
 
