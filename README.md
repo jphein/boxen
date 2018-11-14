@@ -1,4 +1,4 @@
-# BoXenLinux &reg;
+# BoXenLinux&reg;
 An Ubuntu based Linux&reg; distribution for Nonprofits
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
