@@ -1,7 +1,7 @@
 # BoXenLinux&reg;
 An Ubuntu based Linux&reg; distribution for Nonprofits.
 
-It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. Ubuntu, LTSP, FreeRDP, and many others! It comes in both server (boxenbrain) and client (boxenbaby) variations. Boxenbrain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to use boxenbaby with them. 
+It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. [Ubuntu], [LTSP], [FreeRDP], and many others! It comes in both server (boxenbrain) and client (boxenbaby) variations. Boxenbrain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to use boxenbaby with them. 
 
 BoxenLinux excels at providing thin and zero client driven remote desktop sessions. Linux, Windows, Android and MacOS using ldm, xfreerdp, and xtightvncviwer respectively. It can also provide fatclients for Ubuntu Desktop. [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice. It uses GlusterFS for clustered storage and CTDB for shares. Epoptes provides management and live interaction with all clients.
 
@@ -93,6 +93,7 @@ The registered trademark Linux® is used pursuant to a sublicense from the Linux
 
 [git]: <https://github.com>
 [KVM-VDI]: <https://github.com/Seitanas/kvm-vdi>  
+[FreeRDP]: <http://www.freerdp.com/>  
 [LTSP]: <https://github.com/gentoo-mirror/ltsp>
 [jp]: <https://github.com/jphein>
 [boxen]: <https://github.com/jphein/boxen>
