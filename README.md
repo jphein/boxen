@@ -1,5 +1,7 @@
 # BoXenLinux&reg;
-An Ubuntu based Linux&reg; distribution for Nonprofits
+An Ubuntu based Linux&reg; distribution for Nonprofits.
+
+It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. Ubuntu, LTSP, FreeRDP, and many others! It comes in both server (boxenbrain) and client (boxenbaby) variations. Boxenbrain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to install boxenbaby on them. 
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
 
@@ -45,7 +47,7 @@ It also, provides fatclients for Ubuntu Desktop.
 It uses GlusterFS for clustered storage and CTDB for shares.
 Epoptes provides management and live interaction with all clients.
 
-Roadmap: Have an Ubuntu cloud version for large nonprofits with 6 servers or more. Make into a .deb package. Create LiveCD, and PXE LiveBoot.
+Roadmap: Create live image for both server, and client. Create PXE menu installer for both client and server.
 
 Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
