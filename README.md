@@ -1,4 +1,4 @@
-# BoXenLinux &copy;
+# BoXenLinux &reg;
 An Ubuntu based Linux distribution for Nonprofits
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
@@ -90,6 +90,8 @@ CAUTION: You need to setup rules first. This could disconnect you, if you are us
 sudo ufw enable
 ```
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 
 [git]: <https://github.com>
 [KVM-VDI]: <https://github.com/Seitanas/kvm-vdi>  
