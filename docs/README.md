@@ -32,10 +32,6 @@ x2go - Linux remote desktop for local or remote servers.
 welcome - Gui Welcome window to display a welcome URL using zenity
 ```
 
-Roadmap: Create live image for both server, and client. Create PXE menu installer for both client and server.
-
-Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
-
 Installation:
 To install, follow this [guide]
 Then initiate the below commands in a terminal to copy the config files from this repository:
@@ -49,30 +45,23 @@ sudo chmod +x /usr/share/ltsp/screen.d/*
 sudo ltsp-update-image -c /
 ```
 
-To install on the second server or for a headless install: 
-PXE boot using existing boXen or LTSP server: 
+To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
 
-Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
 ```sh
+#Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
 [<mac address>]
  filename /ubuntu-installer/amd64/pxelinux.0
-```
-Log in remotely into second server, after install
-```sh
+
+#Log in remotely into second server, after install
 ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
 ```
 Then run the above steps as if you were installing with CD
 
-List of packages
-git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server ctdb
+Packages: git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server ctdb
 
-GlusterFS Cluster Filesystem
-```sh
-sudo gluster peer probe boxen2
-sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/vms force
-sudo gluster volume create vms replica 2 transport tcp boxen1:/storage boxen2:/storage force
-mkdir /mnt/vms-pool /mnt/storage-pool
-```
+Roadmap: Create live image for both server, and client. Create PXE menu installer for both client and server.
+
+Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
