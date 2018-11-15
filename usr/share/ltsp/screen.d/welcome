@@ -1,7 +1,13 @@
 #!/bin/sh
+
 #Read lts.conf for variables
 . /usr/share/ltsp/ltsp_config
-COMMAND= "zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL"
+. /usr/share/ltsp/screen-x-common
+
+# xfreerdp segfaults if HOME is unset.
+export HOME=${HOME:-/root}
+
+COMMAND="zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL"
 exec xinit /usr/share/ltsp/xinitrc "$COMMAND" -- "$DISPLAY" "vt${TTY}" -nolisten tcp $X_ARGS >/dev/null
 if [ "$?" -eq "0" ]
 then
