@@ -59,7 +59,19 @@ Then run the above steps as if you were installing with CD
 
 Packages: git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server ctdb
 
-Roadmap: Create live image for both server, and client. Create PXE menu installer for both client and server.
+Roadmap: 
+
+Create live image for both server, and client using mkusb. and/or respin.
+
+Create PXE menu installer for both client and server.
+Client --> ltsp menu (default)
+Install (wifi or remote) client -- boxen baby iso
+Install server -- boxen brain iso 
+Boot first HD
+netboot.xyz
+https://wiki.ubuntu.com/UEFI/PXE-netboot-install
+https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
+https://netboot.xyz/booting/tftp/
 
 Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
