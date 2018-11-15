@@ -50,6 +50,7 @@ Installation:
 To install, follow this [guide]
 Then initiate the below commands in a terminal to copy the config files from this repository:
 ```sh
+cd /
 sudo apt install git
 sudo git init
 sudo git remote add origin https://github.com/jphein/boxen
