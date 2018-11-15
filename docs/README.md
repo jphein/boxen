@@ -7,17 +7,6 @@ BoxenLinux excels at providing thin and zero client driven remote desktop sessio
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
 
-```sh
-Files contained within this repository:
-/var/lib/tftpboot/ltsp/amd64/lts.conf #Menu driven Desktop chooser
-/etc/ltsp/ltsp-build-client.conf      #Build your LTSP client image with the greek schools repo, xfreerdp-nightly, and epoptes.
-/opt/ltsp/amd64/usr/share/ltsp/screen.d/xfreerdp-nightly #Symlink to xfreerdp if you want to run nightlies.
-/opt/ltsp/amd64/usr/share/ltsp/screen.d/rdpgui           #To prompt for creds needs xfreerdp-prompt as well. 
-/opt/ltsp/amd64/usr/share/ltsp/screen.d/xfreerdp-prompt  #To prompt for cred using xfreerdp-nightly.
-/opt/ltsp/amd64/usr/share/ltsp/screen.d/vdi              #KVM-VDI LTSP client, see https://github.com/Seitanas/kvm-vdi/
-/opt/ltsp/amd64/usr/share/ltsp/screen.d/vncviewer        #Vnc
-/opt/ltsp/amd64/usr/share/ltsp/screen.d/remote-viewer    #Spice
-```
 Ubuntu and LTSP can provide a platform for providing desktops environments in many different ways.
 
 LTSP already comes with these client scripts:
@@ -40,6 +29,7 @@ vdi – KVM-VDI LTSP client, see github.com/Seita…
 vnc – VNCviewer for remote desktop on local or remote Android or MacOS computers.
 spice – virt-viewer for KVM Virtualization software. Can provide remote access to local or remote desktops of ANY kind you can virtualize.
 x2go - Linux remote desktop for local or remote servers. 
+welcome - Gui Welcome window to display a welcome URL using zenity
 ```
 
 Roadmap: Create live image for both server, and client. Create PXE menu installer for both client and server.
