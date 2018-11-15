@@ -66,7 +66,9 @@ Packages: git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server
 
 Roadmap: 
 
-Create live image for both server, and client using mkusb. and/or respin.
+Create live image for both server, and client with installer using mkusb. and/or respin.
+
+https://askubuntu.com/questions/930233/how-can-i-make-a-bootable-unattended-usb-restore-disk/930489#930489
 
 Create PXE menu installer for both client and server.
 Client --> ltsp menu (default)
