@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# Screen script that launches any other script. Can be called from lts.conf
+# like this:
+#   SCREEN_07="yourscript"
+#
+# Can be used for any screen script, by just symlinking
+# screen.d/yourscript to screen.d/launch.
+#
+# Copyright (c) 2011 Alkis Georgopoulos <http://alkisg.mysch.gr>
+#
+# This software is licensed under the GNU General Public License version 2,
+# the full text of which can be found in the COPYING file.
+
+. /usr/share/ltsp/screen-x-common
+. /usr/share/ltsp/ltsp_config
+
+# xfreerdp segfaults if HOME is unset.
+#export HOME=${HOME:-/root}
+
+# Make XINITRC_DAEMON default to "True", to prevent X from restarting after
+# logout. If you don't want that, force XINITRC_DAEMON=False in lts.conf.
+#export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
+
+# The same screen script can be used for any screen script, by just symlinking
+# screen.d/yourscript to screen.d/launch.
+basename=${0##*/}
+
+COMMAND="$basename $*"
+
+
+# The following logic is described at the top of xinitrc.
+eval exec "/usr/share/ltsp/screen.d/$COMMAND"
