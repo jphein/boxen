@@ -12,8 +12,8 @@
 # This software is licensed under the GNU General Public License version 2,
 # the full text of which can be found in the COPYING file.
 
-. /usr/share/ltsp/screen-x-common
-. /usr/share/ltsp/ltsp_config
+#. /usr/share/ltsp/screen-x-common
+#. /usr/share/ltsp/ltsp_config
 
 # xfreerdp segfaults if HOME is unset.
 #export HOME=${HOME:-/root}
