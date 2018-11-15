@@ -55,6 +55,8 @@ sudo apt install git
 sudo git init
 sudo git remote add origin https://github.com/jphein/boxen
 sudo pull origin master
+sudo chmod +x /usr/share/ltsp/screen.d/*
+sudo ltsp-update-image -c /
 ```
 
 To install on the second server or for a headless install: 
