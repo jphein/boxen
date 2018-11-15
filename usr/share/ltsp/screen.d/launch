@@ -12,15 +12,15 @@
 # This software is licensed under the GNU General Public License version 2,
 # the full text of which can be found in the COPYING file.
 
-#. /usr/share/ltsp/screen-x-common
-#. /usr/share/ltsp/ltsp_config
+. /usr/share/ltsp/screen-x-common
+. /usr/share/ltsp/ltsp_config
 
 # xfreerdp segfaults if HOME is unset.
-#export HOME=${HOME:-/root}
+export HOME=${HOME:-/root}
 
 # Make XINITRC_DAEMON default to "True", to prevent X from restarting after
 # logout. If you don't want that, force XINITRC_DAEMON=False in lts.conf.
-#export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
+export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
 
 # The same screen script can be used for any screen script, by just symlinking
 # screen.d/yourscript to screen.d/launch.
@@ -28,4 +28,5 @@ basename=${0##*/}
 
 COMMAND="$basename $*"
 
-eval exec "/usr/share/ltsp/screen.d/custom/$COMMAND"
+# The following logic is described at the top of xinitrc.
+exec xinit /usr/share/ltsp/xinitrc "/usr/share/ltsp/screen.d/boxen/$COMMAND" -- "$DISPLAY" "vt${TTY}" -nolisten tcp $X_ARGS >/dev/null
