@@ -46,50 +46,46 @@ Roadmap: Create live image for both server, and client. Create PXE menu installe
 
 Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
-To install, use an [Ubuntu LiveCD for Ubuntu 18.04.01 Desktop][Ubuntu] LiveCD iso. 
-Then run the below in a terminal.
-
+Installation:
+To install, follow this [guide]
+Then initiate the below commands in a terminal to copy the config files from this repository:
 ```sh
-sudo apt-get install git byobu ltsp-server-standalone qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager epoptes glusterfs-server ctdb#To install packages.
-#sudo adduser `id -un` libvirtd
-sudo gpasswd `id -un` epoptes
-#To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
-rm /etc/ltsp/dhcp.conf
-git init
-git remote add origin https://github.com/jphein/boxen
-git pull https://github.com/jphein/boxen/etc/ltsp/ltsp-build-client.conf
-ltsp-build-client --fatclient
-git pull origin master
-ltsp-update-image
-sudo gluster peer probe boxen2
-sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/vms force
-sudo gluster volume create vms replica 2 transport tcp boxen1:/storage boxen2:/storage force
-mkdir /mnt/vms-pool /mnt/storage-pool
-#Bridge
-
+cd /
+sudo apt install git
+sudo git init
+sudo git remote add origin https://github.com/jphein/boxen
+sudo pull origin master
 ```
 
 To install on the second server or for a headless install: 
 PXE boot using existing boXen or LTSP server: 
 
-Add to your /etc/ltsp/dhcpd.conf
+Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
 ```sh
 [<mac address>]
  filename /ubuntu-installer/amd64/pxelinux.0
 ```
-Then
+Log in remotely into second server, after install
+```sh
 ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
+```
 Then run the above steps as if you were installing with CD
 
-You many want to run this command after boXenLinux is installed to enable a firewall.
-CAUTION: You need to setup rules first. This could disconnect you, if you are using SSH to install.
+List of packages
+git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server ctdb
+
+GlusterFS Cluster Filesystem
 ```sh
-sudo ufw enable
+sudo gluster peer probe boxen2
+sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/vms force
+sudo gluster volume create vms replica 2 transport tcp boxen1:/storage boxen2:/storage force
+mkdir /mnt/vms-pool /mnt/storage-pool
 ```
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 [git]: <https://github.com>
 [KVM-VDI]: <https://github.com/Seitanas/kvm-vdi>  
@@ -97,7 +93,8 @@ The registered trademark Linux® is used pursuant to a sublicense from the Linux
 [LTSP]: <https://github.com/gentoo-mirror/ltsp>
 [jp]: <https://github.com/jphein>
 [boxen]: <https://github.com/jphein/boxen>
-[Ubuntu]: <http://www.ubuntu.com/download/server>
+[Ubuntu]: <http://www.ubuntu.com/download/desktop>
+[guide]: <https://jphein.com/how-to-provide-a-windows-desktop-experience/>
 [dill]: <https://github.com/joemccann/dillinger>
    [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [john gruber]: <http://daringfireball.net>
