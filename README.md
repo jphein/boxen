@@ -48,25 +48,12 @@ Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org,
 
 Installation:
 To install, follow this [guide]
-Or, Try the below commands:
+Then initiate the below commands in a terminal to copy the config files from this repository:
 ```sh
-sudo apt-get install git byobu ltsp-server-standalone qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager epoptes glusterfs-server ctdb#To install packages.
-#sudo adduser `id -un` libvirtd
-sudo gpasswd `id -un` epoptes
-#To have your own configs installed. Fork jphein/boxen, and edit this url to your own repository.
-rm /etc/ltsp/dhcp.conf
-git init
-git remote add origin https://github.com/jphein/boxen
-git pull https://github.com/jphein/boxen/etc/ltsp/ltsp-build-client.conf
-ltsp-build-client --fatclient
-git pull origin master
-ltsp-update-image
-sudo gluster peer probe boxen2
-sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/vms force
-sudo gluster volume create vms replica 2 transport tcp boxen1:/storage boxen2:/storage force
-mkdir /mnt/vms-pool /mnt/storage-pool
-#Bridge
-
+sudo apt install git
+sudo git init
+sudo git remote add origin https://github.com/jphein/boxen
+sudo pull origin master
 ```
 
 To install on the second server or for a headless install: 
@@ -82,6 +69,17 @@ Log in remotely into second server, after install
 ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
 ```
 Then run the above steps as if you were installing with CD
+
+List of packages
+git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server ctdb
+
+GlusterFS Cluster Filesystem
+```sh
+sudo gluster peer probe boxen2
+sudo gluster volume create vms replica 2 transport tcp boxen1:/vms boxen2:/vms force
+sudo gluster volume create vms replica 2 transport tcp boxen1:/storage boxen2:/storage force
+mkdir /mnt/vms-pool /mnt/storage-pool
+```
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
