@@ -11,5 +11,5 @@ zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCO
 if [ "$?" -eq "0" ]
 then 
 #eval exec "/usr/share/ltsp/screen.d/menu"
-chvt 2
+chvt $WELCOME_OKVT
 fi
