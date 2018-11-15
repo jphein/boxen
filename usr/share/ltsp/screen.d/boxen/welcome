@@ -7,10 +7,9 @@
 # xfreerdp segfaults if HOME is unset.
 export HOME=${HOME:-/root}
 
-COMMAND="zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL"
+zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL
 if [ "$?" -eq "0" ]
-then
-zenity --text-info 
-eval exec "/usr/share/ltsp/screen.d/menu"
-#chvt 2
+then 
+#eval exec "/usr/share/ltsp/screen.d/menu"
+chvt 2
 fi
