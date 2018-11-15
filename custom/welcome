@@ -1,6 +1,8 @@
 #!/bin/sh
+#Read lts.conf for variables
+. /usr/share/ltsp/ltsp_config
 zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL 
 if [ "$?" -eq "0" ]
 then
-sudo chvt 2
+eval exec "/usr/share/ltsp/screen.d/menu"
 fi
