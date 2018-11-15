@@ -78,7 +78,9 @@ https://wiki.ubuntu.com/UEFI/PXE-netboot-install
 https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
 https://netboot.xyz/booting/tftp/
 
-Projects like boXenLinux: www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
+Interesting Projects:
+
+www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
