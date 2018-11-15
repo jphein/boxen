@@ -82,6 +82,38 @@ https://netboot.xyz/booting/tftp/
 
 Interesting Projects:
 
+selivan / thinclient
+Tools to build custom Ubuntu image, that boots over network and works entirely from RAM. 
+
+AdnanHodzic / displaylink-debian
+DisplayLink driver installer for Debian/Ubuntu based Linux distributions.
+
+kenorb-contrib / isorespin
+Script to allow Ubuntu ISO to be respun and customized ("remastered") to create a new ISO
+
+t413 / SMS-Tools
+Import / Export / Merge tool for your Android/iOS/GV text message history.
+
+antonym / netboot.xyz
+Network bootable operating system installer based on iPXE
+ 
+mbusb / multibootusb
+Create multiboot live Linux on a USB disk...
+ 
+freenas / freenas
+FreeNAS Git Repository
+
+Thinstation / thinstation
+A framework for making thin and light Linux based images for x86 based machines and thinclients.
+
+TigerVNC / tigervnc
+High performance, multi-platform VNC client and server
+ 
+xbgmsharp / ipxe-buildweb
+iPXE Prebuilt binary web interface
+
+Seitanas / kvm-vdi
+
 www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
