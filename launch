@@ -28,6 +28,4 @@ basename=${0##*/}
 
 COMMAND="$basename $*"
 
-
-# The following logic is described at the top of xinitrc.
 eval exec "/usr/share/ltsp/screen.d/custom/$COMMAND"
