@@ -1,11 +1,15 @@
 #!/bin/sh
 #
-# Screen script that launches any other script. Can be called from lts.conf
+# X Screen script that launches any other script. Can be called from lts.conf
 # like this:
 #   SCREEN_07="yourscript"
 #
 # Can be used for any screen script, by just symlinking
 # screen.d/yourscript to screen.d/launch.
+#cd /usr/share/ltsp/screen.d 
+#put "yourscript" in the boxen directory
+# 
+# ln -s launch "yourscript"
 #
 # Copyright (c) 2011 Alkis Georgopoulos <http://alkisg.mysch.gr>
 #
