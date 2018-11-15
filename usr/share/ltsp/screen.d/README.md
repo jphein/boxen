@@ -7,4 +7,5 @@ vdi              #KVM-VDI LTSP client, see https://github.com/Seitanas/kvm-vdi/
 vncviewer        #Vnc client
 remote-viewer    #Spice client
 x2go             #x2go client
+welcome          #Gui Welcome window to display a welcome URL using zenity
 ```
