@@ -1,7 +1,8 @@
 #!/bin/sh
 #Read lts.conf for variables
 . /usr/share/ltsp/ltsp_config
-zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL 
+COMMAND= "zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL"
+exec xinit /usr/share/ltsp/xinitrc "$COMMAND" -- "$DISPLAY" "vt${TTY}" -nolisten tcp $X_ARGS >/dev/null
 if [ "$?" -eq "0" ]
 then
 eval exec "/usr/share/ltsp/screen.d/menu"
