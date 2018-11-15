@@ -36,7 +36,10 @@ https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Installation:
 To install, follow this [guide]
-Then initiate the below commands in a terminal to copy the config files from this repository:
+
+
+Once can initiate the below commands in a terminal to copy the config files from this repository to keep updated:
+Not working
 ```sh
 cd /
 sudo apt install git
