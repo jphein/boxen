@@ -62,7 +62,7 @@ ssh ubuntu@<ip from dhcp syslog> -p ubuntu
 ```
 Then run the above steps as if you were installing with CD
 
-Packages: git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server ctdb
+Packages: ssh virt-manager ltsp-server-standalone ltsp-client epoptes dnsmasq xfreerdp grub-ipxe x2goserver git byobu glusterfs-server ctdb apt-cacher
 
 Roadmap: 
 
