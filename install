@@ -21,6 +21,7 @@ cd boxen
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/boxen/welcome 
 cd ..
 sudo ln -s launch welcome
+sudo ln -s /sbin/shutdown shutdown
 sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
 sudo ltsp-update-image --cleanup /
 cd /var/lib/tftpboot/ltsp/amd64/
