@@ -66,11 +66,16 @@ Packages: git byobu ltsp-server-standalone virt-manager epoptes glusterfs-server
 
 Roadmap: 
 
-Create live image for both server, and client with installer using mkusb. and/or respin.
-
+* Create live image for both server, and client with installer using mkusb. and/or respin.
 https://askubuntu.com/questions/930233/how-can-i-make-a-bootable-unattended-usb-restore-disk/930489#930489
 
-Create PXE menu installer for both client and server.
+* Create Preseed file for PXE installers.
+https://diegolemos.net/2017/08/06/pxe-booting/
+https://help.ubuntu.com/lts/installation-guide/example-preseed.txt
+https://gist.github.com/skx/ecc3a429eb11a3c7f022
+https://help.ubuntu.com/lts/installation-guide/armhf/apbs02.html
+
+*Create PXE menu installer for both client and server.
 Client --> ltsp menu (default)
 Install (wifi or remote) client -- boxen baby iso
 Install server -- boxen brain iso 
