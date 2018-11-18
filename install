@@ -1,0 +1,27 @@
+#!/bin/bash
+sudo apt install ssh
+sudo add-apt-repository --yes ppa:ts.sch.gr #The Greek Schools repository
+sudo apt install --yes --install-recommends ltsp-server-standalone ltsp-client epoptes
+sudo ltsp-config dnsmasq --enable-dns
+sudo service dnsmasq restart
+sudo gpasswd -a ${SUDO_USER:-$USER} epoptes
+sudo apt purge --yes --auto-remove mate-hud snapd
+sudo sh -c 'echo "deb http://pub.freerdp.com/repositories/deb/$(lsb_release -cs)/ freerdp-nightly main" >> /etc/apt/sources.list.d/freerdp-nightly.list' 
+wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
+sudo apt update 
+sudo apt install --yes freerdp-nightly
+sudo ln -s /opt/freerdp-nightly/bin/xfreerdp /usr/bin/xfreerdp-nightly
+cd /usr/share/ltsp/screen.d/
+sudo ln -s xfreerdp xfreerdp-nightly
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/rdpgui 
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/xfreerdp-prompt 
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/launch
+sudo mkdir boxen  
+cd boxen
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/boxen/welcome 
+cd ..
+sudo ln -s launch welcome
+sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
+cd /var/lib/tftpboot/ltsp/amd64/
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
+sudo ltsp-update-image --cleanup /
