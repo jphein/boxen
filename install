@@ -22,6 +22,6 @@ sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/s
 cd ..
 sudo ln -s launch welcome
 sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
+sudo ltsp-update-image --cleanup /
 cd /var/lib/tftpboot/ltsp/amd64/
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
-sudo ltsp-update-image --cleanup /
