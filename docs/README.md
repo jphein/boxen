@@ -75,7 +75,7 @@ https://help.ubuntu.com/lts/installation-guide/example-preseed.txt
 https://gist.github.com/skx/ecc3a429eb11a3c7f022
 https://help.ubuntu.com/lts/installation-guide/armhf/apbs02.html
 
-*Create PXE menu installer for both client and server.
+* Create PXE menu installer for both client and server.
 Client --> ltsp menu (default)
 Install (wifi or remote) client -- boxen baby iso
 Install server -- boxen brain iso 
@@ -87,39 +87,44 @@ https://netboot.xyz/booting/tftp/
 
 Interesting Projects:
 
-selivan / thinclient
+* selivan / thinclient
 Tools to build custom Ubuntu image, that boots over network and works entirely from RAM. 
 
-AdnanHodzic / displaylink-debian
+* AdnanHodzic / displaylink-debian
 DisplayLink driver installer for Debian/Ubuntu based Linux distributions.
 
-kenorb-contrib / isorespin
+* kenorb-contrib / isorespin
 Script to allow Ubuntu ISO to be respun and customized ("remastered") to create a new ISO
 
-t413 / SMS-Tools
+* t413 / SMS-Tools
 Import / Export / Merge tool for your Android/iOS/GV text message history.
 
-antonym / netboot.xyz
+* antonym / netboot.xyz
 Network bootable operating system installer based on iPXE
  
-mbusb / multibootusb
+* mbusb / multibootusb
 Create multiboot live Linux on a USB disk...
  
-freenas / freenas
+* freenas / freenas
 FreeNAS Git Repository
 
-Thinstation / thinstation
+* Thinstation / thinstation
 A framework for making thin and light Linux based images for x86 based machines and thinclients.
 
-TigerVNC / tigervnc
+* TigerVNC / tigervnc
 High performance, multi-platform VNC client and server
  
-xbgmsharp / ipxe-buildweb
+* xbgmsharp / ipxe-buildweb
 iPXE Prebuilt binary web interface
 
-Seitanas / kvm-vdi
+* Seitanas / kvm-vdi
 
-www.smartos.org, www.foss-cloud.org/, www.freenas.org, www.edubuntu.org, www.openmediavault.org/, www.nas4free.org/, www.openfiler.org
+* www.smartos.org
+* www.foss-cloud.org/
+* www.edubuntu.org
+* www.openmediavault.org/
+* www.nas4free.org/
+* www.openfiler.org
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
