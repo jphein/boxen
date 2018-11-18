@@ -35,32 +35,11 @@ Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Installation:
-To install, follow this [guide]
+* Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
+* Install Ubuntu 18.04.1 Desktop Minimal Install.
+* Run the install script [install]
 
-
-Once can initiate the below commands in a terminal to copy the config files from this repository to keep updated:
-Not working
-```sh
-cd /
-sudo apt install git
-sudo git init
-sudo git remote add origin https://github.com/jphein/boxen
-sudo pull origin master
-sudo chmod +x /usr/share/ltsp/screen.d/*
-sudo ltsp-update-image -c /
-```
-
-To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
-
-```sh
-#Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
-[<mac address>]
- filename /ubuntu-installer/amd64/pxelinux.0
-
-#Log in remotely into second server, after install
-ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
-```
-Then run the above steps as if you were installing with CD
+Manaul install guide here:[guide]
 
 Packages: ssh virt-manager ltsp-server-standalone ltsp-client epoptes dnsmasq xfreerdp grub-ipxe x2goserver git byobu glusterfs-server ctdb apt-cacher
 
@@ -126,6 +105,30 @@ iPXE Prebuilt binary web interface
 * www.nas4free.org/
 * www.openfiler.org
 
+Once can initiate the below commands in a terminal to copy the config files from this repository to keep updated:
+Not working
+```sh
+cd /
+sudo apt install git
+sudo git init
+sudo git remote add origin https://github.com/jphein/boxen
+sudo pull origin master
+sudo chmod +x /usr/share/ltsp/screen.d/*
+sudo ltsp-update-image -c /
+```
+
+To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
+
+```sh
+#Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
+[<mac address>]
+ filename /ubuntu-installer/amd64/pxelinux.0
+
+#Log in remotely into second server, after install
+ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
+```
+Then run the above steps as if you were installing with CD
+
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
 
@@ -139,6 +142,7 @@ The registered trademark Linux® is used pursuant to a sublicense from the Linux
 [boxen]: <https://github.com/jphein/boxen>
 [Ubuntu]: <http://www.ubuntu.com/download/desktop>
 [guide]: <https://jphein.com/how-to-provide-a-windows-desktop-experience/>
+[install]: <https://github.com/jphein/boxen/blob/master/install>
 [dill]: <https://github.com/joemccann/dillinger>
    [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [john gruber]: <http://daringfireball.net>
