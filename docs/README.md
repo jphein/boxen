@@ -63,6 +63,7 @@ https://diegolemos.net/2017/08/06/pxe-booting/
 https://help.ubuntu.com/lts/installation-guide/example-preseed.txt
 https://gist.github.com/skx/ecc3a429eb11a3c7f022
 https://help.ubuntu.com/lts/installation-guide/armhf/apbs02.html
+https://www.syslinux.org/wiki/index.php?title=PXELINUX
 
 Interesting Projects:
 
