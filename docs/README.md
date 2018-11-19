@@ -8,6 +8,7 @@ BoxenLinux excels at providing zero, and thin client driven local or remote desk
 Boxen Baby is simply Ubuntu 18.04.1 Desktop minimal preseeded with openvpn, xfreerdp-nightly, and other clients. Boxen Brain is more complex, and is described below.
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
+<img src="https://user-images.githubusercontent.com/19301265/48688498-5d159380-eb7b-11e8-8610-6da0a67a0182.png" width="15%"></img> <img src="https://user-images.githubusercontent.com/19301265/48688511-6999ec00-eb7b-11e8-861a-dcc4e471e8f8.png" width="15%"></img> <img src="https://user-images.githubusercontent.com/19301265/48688519-70c0fa00-eb7b-11e8-977e-1a5fe2970a6a.png" width="15%"></img> <img src="https://user-images.githubusercontent.com/19301265/48688523-74ed1780-eb7b-11e8-968f-967c84126a2e.png" width="15%"></img> <img src="https://user-images.githubusercontent.com/19301265/48688541-7c142580-eb7b-11e8-9fb9-d82e6bcda8cb.png" width="15%"></img> <img src="https://user-images.githubusercontent.com/19301265/48688546-80404300-eb7b-11e8-8245-66d5b864f3ce.png" width="15%"></img> 
 
 Ubuntu and LTSP can provide a platform for providing desktops environments in many different ways.
 
