@@ -1,0 +1,6 @@
+ Default boot option to use
+  #DEFAULT menu.c32
+  # Prompt user for selection
+  PROMPT 1
+  TIMEOUT 300
+  DISPLAY display.msg
