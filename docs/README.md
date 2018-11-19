@@ -52,11 +52,11 @@ Roadmap:
 https://askubuntu.com/questions/930233/how-can-i-make-a-bootable-unattended-usb-restore-disk/930489#930489
 
 * Create PXE menu installer for both client and server.
-* * Client --> LTSP menu (default)
-* * Install boxen baby (wifi or vpn remote) client -- ubuntu bionic desktop minimal install with xfreerdo-ngihtly
-* * Install server -- preseeded ubuntu with boxen install script
-* * Boot first HD
-* * netboot.xyz https://netboot.xyz/booting/tftp/
+ * Client --> LTSP menu (default)
+ * Install boxen baby (wifi or vpn remote) client -- ubuntu bionic desktop minimal install with xfreerdo-ngihtly
+ * Install boxen brain server -- preseeded ubuntu with boxen install script
+ * Boot first HD
+ * netboot.xyz https://netboot.xyz/booting/tftp/
 https://wiki.ubuntu.com/UEFI/PXE-netboot-install
 https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
 
