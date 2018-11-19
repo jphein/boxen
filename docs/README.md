@@ -5,7 +5,7 @@ It is best described as a collection of open source projects. Configured and ext
 
 BoxenLinux excels at providing zero, and thin client driven local or remote desktop sessions. Linux, Windows, and MacOS using ldm, xfreerdp, and vncviwer respectively. It can also provide fatclients for Ubuntu Desktop. [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice. It uses GlusterFS for clustered storage and CTDB for shares. Epoptes provides management and live interaction with all clients.
 
-Boxen Baby is simply Ubuntu 18.04.1 Desktop minimal preseeded with xfreerdp-nightly and other clients. Boxen Brain is more complex, and is described below.
+Boxen Baby is simply Ubuntu 18.04.1 Desktop minimal preseeded with openvpn, xfreerdp-nightly, and other clients. Boxen Brain is more complex, and is described below.
 
 ![alt text](https://jphein.com/wp-content/uploads/2018/11/Screenshot-from-2018-11-11-23-58-02.png)
 
