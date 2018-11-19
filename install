@@ -26,3 +26,9 @@ sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
 sudo ltsp-update-image --cleanup /
 cd /var/lib/tftpboot/ltsp/amd64/
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
+#Install pxe menu
+#cd /var/lib/tftpboot/ltsp/amd64/pxelinux.cfg
+#wget 
+#sudo cp /usr/lib/syslinux/modules/bios/menu.c32 ../
+#sudo rm default 
+#sudo ln -s boxen default
