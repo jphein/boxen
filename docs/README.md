@@ -1,7 +1,7 @@
 # BoXenLinux&reg;
 An Ubuntu based Linux&reg; distribution for Nonprofits.
 
-It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. [Ubuntu], [LTSP], [FreeRDP], and many others! It comes in both server (boxen brain) and client (boxen baby) variations. Boxenbrain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to use boxenbaby with them. 
+It is best described as a collection of open source projects. Configured and extended for Nonprofits. e.g. [Ubuntu], [LTSP], [FreeRDP], and many others! It comes in both server (boxen brain) and client (boxen baby) variations. Boxen brain is all you need if you have a wired network, your clients will boot from the network. However, if you need wireless clients, or remote VPN clients you'll need to install boxen baby to the internal drive or a USB drive of each wireless or wan client. 
 
 BoxenLinux excels at providing zero, and thin client driven local or remote desktop sessions. Linux, Windows, and MacOS using ldm, xfreerdp, and vncviwer respectively. It can also provide fatclients for Ubuntu Desktop. [KVM-VDI] provides VDI based remote desktop for all OS's using KVM and Spice. It uses GlusterFS for clustered storage and CTDB for shares. Epoptes provides management and live interaction with all clients.
 
@@ -52,14 +52,14 @@ Roadmap:
 https://askubuntu.com/questions/930233/how-can-i-make-a-bootable-unattended-usb-restore-disk/930489#930489
 
 * Create PXE menu installer for both client and server.
-Client --> ltsp menu (default)
-Install (wifi or remote) client -- boxen baby iso
-Install server -- boxen brain iso 
-Boot first HD
-netboot.xyz
+** Client --> LTSP menu (default)
+** Install boxen baby (wifi or vpn remote) client -- ubuntu bionic desktop minimal install with xfreerdo-ngihtly
+** Install server -- preseeded ubuntu with boxen install script
+** Boot first HD
+** netboot.xyz https://netboot.xyz/booting/tftp/
 https://wiki.ubuntu.com/UEFI/PXE-netboot-install
 https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
-https://netboot.xyz/booting/tftp/
+
 
 * Create Preseed file for PXE installers.
 https://diegolemos.net/2017/08/06/pxe-booting/
