@@ -60,6 +60,28 @@ https://askubuntu.com/questions/930233/how-can-i-make-a-bootable-unattended-usb-
 https://wiki.ubuntu.com/UEFI/PXE-netboot-install
 https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
 
+```sh
+#ltsp: This is the place for support of LTSP.  Ask your question and hang around for an answer.  Check IRC logs at http://irclogs.ltsp.org
+[19:56] == jphein [b8178628@gateway/web/freenode/ip.184.23.134.40] has joined #ltsp
+[19:56] -ChanServ- [#ltsp] Welcome to the Linux Terminal Server Project's irc channel
+[19:58] <jphein> Hello to everyone. =] I have a nice LTSP install in KVM. It's using Ubuntu 18.04.1, with the chrootless dnsmasq proxy method
+[19:59] <jphein> However, when I run ltsp-update-kernels my pxe config doesn't pick up the changes I make in /etc/ltsp/udpate-kernels.conf
+[20:00] <jphein> my /var/lib/tftpboot/amd64pxelinux.cfg/ directory remains unchanged
+[20:01] <jphein> When I make the changes directly in the files it works well
+[20:09] <jphein> Am I missing something?
+[21:56] <alkisg> jphein: yes, /usr/share/ltsp/update-kernels
+[21:56] <alkisg> This transfers /etc/ltsp/update-kernels.conf to /boot/pxelinux.cfg/default
+[21:56] <alkisg> Then ltsp-update-image puts it in /opt/ltsp/images/amd64.img
+[21:57] <alkisg> And finally ltsp-update-kernels gets it from amd64.img and puts it to tftp
+[21:57] <jphein> Thank you! I'll try it out. =]
+[21:57] <alkisg> It's so complicated that I wanted to get rid of it and just use a static file :D
+[21:59] <jphein> hahaha
+[22:08] <jphein> So it never goes to /var/lib/tftpboot/ltsp/amd64/pxelinux.cfg/ ?
+[22:17] <jphein> I'd like to install Ubuntu as a pxe option before my ltsp menu
+[22:32] <alkisg> jphein: sure, it goes to pxelinux.cfg after the 4 steps I mentioned above
+[22:38] <jphein> lol!
+```
+
 
 * Create Preseed file for PXE installers.
 https://diegolemos.net/2017/08/06/pxe-booting/
