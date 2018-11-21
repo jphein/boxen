@@ -25,6 +25,7 @@ sudo ln -s /sbin/shutdown shutdown
 sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
 #Install pxe menu
 cd /etc/ltsp
+mv update-kernels.conf update-kernels.conf.bak
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/etc/ltsp/update-kernels.conf
 sudo /usr/share/ltsp/update-kernels
 #cd /var/lib/tftpboot/ltsp/amd64/pxelinux.cfg
