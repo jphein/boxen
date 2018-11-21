@@ -36,3 +36,8 @@ sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot
 sudo add-apt-repository --yes ppa:x2go/stable
 sudo apt-get install --yes --install-recommends x2goserver x2gomatebindings
 echo "Done installing BoXen Brain!"
+###dnsmasq hack for testing
+#sudo killall dnsmasq
+#sudo mv /etc/dnsmasq.d/libvirt-daemon /root/
+#sudo sh -c 'echo "dhcp-range=192.168.122.20,192.168.122.250,8h" >> /etc/dnsmasq.d/ltsp-server-dnsmasq.conf 
+#sudo service dnsmasq restart
