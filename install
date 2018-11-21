@@ -28,13 +28,8 @@ cd /etc/ltsp
 mv update-kernels.conf update-kernels.conf.bak
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/etc/ltsp/update-kernels.conf
 sudo /usr/share/ltsp/update-kernels
-#cd /var/lib/tftpboot/ltsp/amd64/pxelinux.cfg
-#wget 
-#sudo cp /usr/lib/syslinux/modules/bios/menu.c32 ../
-#sudo rm default 
-#sudo ln -s boxen default
 sudo ltsp-update-image --cleanup /
 sudo ltsp-update-kernels
 cd /var/lib/tftpboot/ltsp/amd64/
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
-
+echo "Done installing BoXen Brain!"
