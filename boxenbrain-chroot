@@ -1,30 +1,22 @@
 #!/bin/bash
-sudo apt install ssh
+#Update packages
+sudo apt update
+sudo apt ugprade
+#sudo apt install ssh
 sudo add-apt-repository --yes ppa:ts.sch.gr #The Greek Schools repository
-sudo apt install --yes --install-recommends ltsp-server-standalone ltsp-client epoptes virt-manager
+sudo apt install --yes --install-recommends ltsp-server-standalone epoptes virt-manager
 sudo ltsp-config dnsmasq --enable-dns
 sudo service dnsmasq restart
 sudo gpasswd -a ${SUDO_USER:-$USER} epoptes
 sudo apt purge --yes --auto-remove mate-hud snapd
-sudo sh -c 'echo "deb http://pub.freerdp.com/repositories/deb/$(lsb_release -cs)/ freerdp-nightly main" >> /etc/apt/sources.list.d/freerdp-nightly.list' 
-wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
-sudo apt update 
-sudo apt install --yes freerdp-nightly
-sudo ln -s /opt/freerdp-nightly/bin/xfreerdp /usr/bin/xfreerdp-nightly
-cd /usr/share/ltsp/screen.d/
-sudo ln -s xfreerdp xfreerdp-nightly
-sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/rdpgui 
-sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/xfreerdp-prompt 
-sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/launch
-sudo mkdir boxen  
-cd boxen
-sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/boxen/welcome 
-cd ..
-sudo ln -s launch welcome
-sudo ln -s /sbin/shutdown shutdown
-sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
 
-#Grab freerdp's key 
+##
+#sudo sh -c 'echo "deb http://pub.freerdp.com/repositories/deb/$(lsb_release -cs)/ freerdp-nightly main" >> /etc/apt/sources.list.d/freerdp-nightly.list' 
+#wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
+#sudo apt update 
+#sudo apt install --yes freerdp-nightly
+
+#Grab freerdp's key and buildclient conf
 cd /etc/ltsp 
 sudo wget http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc
 sudo wget https://github.com/jphein/boxen/raw/master/etc/ltsp/ltsp-build-client.conf
@@ -40,12 +32,19 @@ exit
 
 #Create GUI login screen for xfreerdp-nightly
 cd /opt/ltsp/amd64/usr/share/ltsp/screen.d/
-sudo wget https://raw.githubusercontent.com/jphein/boxen/master/rdpgui
-sudo wget https://raw.githubusercontent.com/jphein/boxen/master/xfreerdp-prompt
-sudo chmod +x rdpgui xfreerdp-prompt
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/rdpgui
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/xfreerdp-prompt
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/launch
+sudo mkdir boxen  
+cd boxen
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/boxen/welcome 
+cd ..
+sudo ln -s launch welcome
+sudo ln -s /sbin/shutdown shutdown
+sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
 
 #You may get this error on Microsoft Azure VM! https://bugs.launchpad.net/ubuntu/+source/ltsp/+bug/1802707 hmmmm.... This script seems to fix it:
-#!/bin/bash
+##!/bin/bash
 # tadaen sylvermane | jason gibson
 # configure locales for ubuntu bionic ltsp chroot creation
 #
