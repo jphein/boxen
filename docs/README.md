@@ -24,7 +24,7 @@ xdmcp – Raw Xorg linux desktop running remotely on server.
 xfreerdp – RDP for Windows desktop running remotely on local or cloud server.
 xterm – xterm terminal running locally on thin client.
 ```
-This has been furthered by my BoXen Linux project to include:
+This has been furthered by the BoXenLinux project to include:
 ```sh
 freerdp-nightly – Nightly builds of xfreerdp to take advantage of Microphone redirection and the latest graphics codecs.
 rdpgui – Gui for displaying a welcome website, and to prompt for credentials when using xfreerdp-nightly.
@@ -38,15 +38,16 @@ Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Installation:
+If you already have a BoXenbrain on your network, simply plug your second in, and boot to the PXE menu where you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
 * Install Ubuntu 18.04.1 Desktop Minimal Install.
 * Run the install script [install]
 
-Manaul install guide here:[guide]
+Manual install guide resided here: [guide]
 
-Incomplete List of projects utilized in BoXenLinux: Ubuntu, LTSP, KVM, FreeRDP, KVM-VDI, OpenVPN, and so many more!  
+Incomplete List of projects utilized in BoXenLinux: Ubuntu, LTSP, KVM, FreeRDP, KVM-VDI, OpenVPN, and so many more! Thank you!!! 
 
-Packages: ssh virt-manager ltsp-server-standalone ltsp-client epoptes dnsmasq xfreerdp grub-ipxe x2goserver git byobu glusterfs-server ctdb apt-cacher
+Packages on top of the Ubuntu 18.04.1 Desktop minimal install: ssh virt-manager ltsp-server-standalone ltsp-client epoptes dnsmasq xfreerdp grub-ipxe x2goserver git byobu glusterfs-server ctdb apt-cacher
 
 Roadmap: 
 
