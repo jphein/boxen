@@ -32,4 +32,8 @@ sudo ltsp-update-image --cleanup /
 sudo ltsp-update-kernels
 cd /var/lib/tftpboot/ltsp/amd64/
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
+##Install X2Go Server
+#sudo add-apt-repository ppa:x2go/stable
+#sudo apt-get update
+#sudo apt-get install x2goserver x2goserver-xsessions x2gomatebindings
 echo "Done installing BoXen Brain!"
