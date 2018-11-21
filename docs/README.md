@@ -152,7 +152,10 @@ https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
 [22:41] <vagrantc> and you're doing this in a user with sudo privledges or something?
 [22:41] <jphein> yes
 [22:41] <alkisg> Yup, with LDM_HASH_PASSWORD=True; or via epoptes :)
+[23:34] <jphein> Which commands do you run after a cp -a /run/initramfs/rofs /target ? Install grub?
+[00:16] <alkisg> jphein: mount /dev/sda1 /mnt; cd /mnt; for d in proc sys dev dev/pts; do mount --bind /$d $d; done; chroot . dpkg-reconfigure grub-pc; umount dev/pts dev sys proc
 ```
+
 To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
 
 ```sh
