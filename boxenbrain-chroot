@@ -44,8 +44,6 @@ sudo wget https://raw.githubusercontent.com/jphein/boxen/master/rdpgui
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/xfreerdp-prompt
 sudo chmod +x rdpgui xfreerdp-prompt
 
-sudo ltsp-update-image
-
 #You may get this error on Microsoft Azure VM! https://bugs.launchpad.net/ubuntu/+source/ltsp/+bug/1802707 hmmmm.... This script seems to fix it:
 #!/bin/bash
 # tadaen sylvermane | jason gibson
@@ -62,7 +60,7 @@ cd /etc/ltsp
 mv update-kernels.conf update-kernels.conf.bak
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/etc/ltsp/update-kernels.conf
 sudo /usr/share/ltsp/update-kernels
-sudo ltsp-update-image --cleanup /
+sudo ltsp-update-image 
 sudo ltsp-update-kernels
 cd /var/lib/tftpboot/ltsp/amd64/
 sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
