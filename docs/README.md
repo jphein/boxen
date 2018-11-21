@@ -84,6 +84,75 @@ https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
 [22:32] <alkisg> jphein: sure, it goes to pxelinux.cfg after the 4 steps I mentioned above
 [22:38] <jphein> lol!
 ```
+
+```sh
+#ltsp: This is the place for support of LTSP.  Ask your question and hang around for an answer.  Check IRC logs at http://irclogs.ltsp.org
+[21:36] == jphein [b8178628@gateway/web/freenode/ip.184.23.134.40] has joined #ltsp
+[21:36] -ChanServ- [#ltsp] Welcome to the Linux Terminal Server Project's irc channel
+[21:37] <jphein> Hello! =] Does anyone know where I would put my install-ubuntu kernels so that update-kernels picks them up and presents them on the PXE menu?
+[21:39] <jphein> Or, do I have to edit the pxelinux.cfg/default symlink manually?
+[21:39] == vagrantc [~vagrant@unaffiliated/vagrantc] has joined #ltsp
+[21:41] <jphein> This is my https://github.com/jphein/boxen/blob/master/etc/ltsp/update-kernels.conf
+[21:44] <jphein> I suppose I can edit my dnsmasq.d/ to add the mac address of the client I'd want to install. With the ubuntu-install pxe boot config.
+[21:48] <jphein> I'm also having issues with the chrootless method in the Azure cloud. Seems the Azure kernel may not have all the right input drivers for KVM?
+[22:25] <alkisg> jphein: I'm not sure what you're asking; why do you need more than one kernel?
+[22:25] <alkisg> If you only keep one kernel, then ltsp will pick them up
+[22:26] <alkisg> Now if you want multiple kernels, ltsp will pick up the latest
+[22:26] <jphein> Sorry, let me rephrase that. Do you know of  a simple way to present the PXE client user with a menu to install Ubuntu?
+[22:26] <alkisg> So if e.g. azure has 4.1, and you manually install 4.15, then the server will have 4.1 and the clients 4.15, without involving any configs
+[22:26] <jphein> cool
+[22:26] <alkisg> jphein: ah sure, you just expose the .iso etc
+[22:27] <alkisg> But the "ltsp way to install a client" is to netboot it and cp -a /run/initramfs/rofs /target
+[22:27] <alkisg> I.e. to clone the ltsp image...
+[22:27] <jphein> that's exactly what i want
+[22:28] <alkisg> You can also easily netboot it, and run: kvm -cdrom /path/to/windows -hda /dev/sda, so that you can even install windows while booted as an ltsp client
+[22:28] <alkisg> All those don't involve pxelinux at all
+[22:28] <alkisg> You do those via epoptes after the client boots normally via ltsp
+[22:28] <jphein> oh yes kvm
+[22:28] <alkisg> (or locally)
+[22:29] <jphein> with epoptes
+[22:29] <jphein> nice
+[22:29] <alkisg> I usually don't want to leave my chair, so I do all clients via epoptes
+[22:29] <jphein> haha =]
+[22:29] <alkisg> So I can be installed 3 different OSes on 3 clients without me going there
+[22:30] <alkisg> *I can install, meh
+[22:30] <alkisg> I can be installing. OK, got it :P
+[22:30] <jphein> thank you , again!
+[22:30] <alkisg> np
+[22:30] <jphein> I like that solution a lot.
+[22:31] <jphein> Do you know the simplest way to preseed an Ubuntu installation with a few changes?
+[22:32] <jphein> wcp -a /run/initramfs/rofs /target
+[22:32] <jphein> Do I make a screen script?
+[22:33] <alkisg> jphein: let's clear something up
+[22:34] <alkisg> cp is for cloning the ltsp image
+[22:34] <alkisg> kvm is for installing ubuntu from an .iso
+[22:34] <alkisg> preseeding only applies to the iso
+[22:34] <alkisg> So which one are you asking about?
+[22:35] <jphein> hahaha, I'm just very curious
+[22:35] <jphein> =]
+[22:35] <jphein> i like all of them
+[22:35] <jphein> but I want to know more about the cp -a
+[22:35] <jphein> it's a simple as that?
+[22:36] <jphein> cloning
+[22:36] <alkisg> I don't make screen scripts for such simple things; I do make scripts that I run either from epoptes or directly from the client
+[22:36] <alkisg> cp,  add user, install grub
+[22:36] <alkisg> You can also have a vm on the server, and use dd, to avoid all that
+[22:36] <jphein> oh i see
+[22:37] <jphein> using qcow?
+[22:37] <jphein> or raw img
+[22:37] <alkisg> E.g. I have bionic-mate in vbox, then i expose it via nbd, and I dd if=/dev/nbd2 of=/dev/sda on the clients, and it's ready
+[22:37] <alkisg> Both  can be done, qemu-nbd supports qcow and vdi and vmdk and raw
+[22:38] <jphein> so many ways
+[22:38] <jphein> that is the one i'll use since I already have the vm
+[22:38] <alkisg> You can even login normally as a user on the client, so that your image is accessible by sshfs in /home/username
+[22:38] <alkisg> So then you do dd if=/home/username/vms/myvm of=/dev/sda, done
+[22:38] <alkisg> No scripts, no screen scripts, nothing
+[22:39] <alkisg> You may only need to resize2fs /dev/sda1 afterwards, so that it extends to all the disk size
+[22:39] <jphein> right
+[22:41] <vagrantc> and you're doing this in a user with sudo privledges or something?
+[22:41] <jphein> yes
+[22:41] <alkisg> Yup, with LDM_HASH_PASSWORD=True; or via epoptes :)
+```
 To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
 
 ```sh
