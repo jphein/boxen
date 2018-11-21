@@ -84,7 +84,17 @@ https://help.ubuntu.com/community/UbuntuLTSP/LTSPMultiboot
 [22:32] <alkisg> jphein: sure, it goes to pxelinux.cfg after the 4 steps I mentioned above
 [22:38] <jphein> lol!
 ```
+To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
 
+```sh
+#Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
+[<mac address>]
+ filename /ubuntu-installer/amd64/pxelinux.0
+
+#Log in remotely into second server, after install
+ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
+```
+Then run the above steps as if you were installing with CD
 
 * Create Preseed file for PXE installers.
 https://diegolemos.net/2017/08/06/pxe-booting/
@@ -145,18 +155,6 @@ sudo pull origin master
 sudo chmod +x /usr/share/ltsp/screen.d/*
 sudo ltsp-update-image -c /
 ```
-
-To install on the second server or for a headless install, PXE boot using existing boXen or LTSP server: 
-
-```sh
-#Add to MAC of second server your existing dhcp conf to tell it to run the installer by default when it PXE boots
-[<mac address>]
- filename /ubuntu-installer/amd64/pxelinux.0
-
-#Log in remotely into second server, after install
-ssh ubuntu@<ip from dhcp syslog> -p ubuntu 
-```
-Then run the above steps as if you were installing with CD
 
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
