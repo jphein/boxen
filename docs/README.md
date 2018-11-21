@@ -168,7 +168,7 @@ The registered trademark Linux® is used pursuant to a sublicense from the Linux
 [boxen]: <https://github.com/jphein/boxen>
 [Ubuntu]: <http://www.ubuntu.com/download/desktop>
 [guide]: <https://jphein.com/how-to-provide-a-windows-desktop-experience/>
-[install]: <https://github.com/jphein/boxen/blob/master/install>
+[install]: <https://github.com/jphein/boxen/blob/master/boxenbrain>
 [dill]: <https://github.com/joemccann/dillinger>
    [git-repo-url]: <https://github.com/joemccann/dillinger.git>
    [john gruber]: <http://daringfireball.net>
