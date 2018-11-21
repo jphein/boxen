@@ -1,0 +1,77 @@
+#!/bin/bash
+sudo apt install ssh
+sudo add-apt-repository --yes ppa:ts.sch.gr #The Greek Schools repository
+sudo apt install --yes --install-recommends ltsp-server-standalone ltsp-client epoptes virt-manager
+sudo ltsp-config dnsmasq --enable-dns
+sudo service dnsmasq restart
+sudo gpasswd -a ${SUDO_USER:-$USER} epoptes
+sudo apt purge --yes --auto-remove mate-hud snapd
+sudo sh -c 'echo "deb http://pub.freerdp.com/repositories/deb/$(lsb_release -cs)/ freerdp-nightly main" >> /etc/apt/sources.list.d/freerdp-nightly.list' 
+wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
+sudo apt update 
+sudo apt install --yes freerdp-nightly
+sudo ln -s /opt/freerdp-nightly/bin/xfreerdp /usr/bin/xfreerdp-nightly
+cd /usr/share/ltsp/screen.d/
+sudo ln -s xfreerdp xfreerdp-nightly
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/rdpgui 
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/xfreerdp-prompt 
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/launch
+sudo mkdir boxen  
+cd boxen
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/usr/share/ltsp/screen.d/boxen/welcome 
+cd ..
+sudo ln -s launch welcome
+sudo ln -s /sbin/shutdown shutdown
+sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
+
+#Grab freerdp's key 
+cd /etc/ltsp 
+sudo wget http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc
+sudo wget https://github.com/jphein/boxen/raw/master/etc/ltsp/ltsp-build-client.conf
+
+#Build client
+sudo ltsp-build-client --config ltsp-build-client.conf
+
+#Create some symlinks so freerdp-nightly is more easy t my lazy scripting
+sudo ltsp-chroot
+ln -s /opt/freerdp-nightly/bin/xfreerdp /usr/bin/xfreerdp-nightly
+ln -s /usr/share/ltsp/screen.d/xfreerdp /usr/share/ltsp/screen.d/xfreerdp-nightly
+exit
+
+#Create GUI login screen for xfreerdp-nightly
+cd /opt/ltsp/amd64/usr/share/ltsp/screen.d/
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/rdpgui
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/xfreerdp-prompt
+sudo chmod +x rdpgui xfreerdp-prompt
+
+sudo ltsp-update-image
+
+#You may get this error on Microsoft Azure VM! https://bugs.launchpad.net/ubuntu/+source/ltsp/+bug/1802707 hmmmm.... This script seems to fix it:
+#!/bin/bash
+# tadaen sylvermane | jason gibson
+# configure locales for ubuntu bionic ltsp chroot creation
+#
+#
+#for var in LC_ALL= LANG= ; do
+#        export "$var"en_US.UTF-8
+#done
+#ltsp-build-client --chroot "$1"
+
+#Install pxe menu
+cd /etc/ltsp
+mv update-kernels.conf update-kernels.conf.bak
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/etc/ltsp/update-kernels.conf
+sudo /usr/share/ltsp/update-kernels
+sudo ltsp-update-image --cleanup /
+sudo ltsp-update-kernels
+cd /var/lib/tftpboot/ltsp/amd64/
+sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot/amd64/lts.conf
+##Install X2Go Server
+sudo add-apt-repository --yes ppa:x2go/stable
+sudo apt-get install --yes --install-recommends x2goserver x2gomatebindings
+echo "Done installing BoXen Brain!"
+###dnsmasq hack for testing
+#sudo killall dnsmasq
+#sudo mv /etc/dnsmasq.d/libvirt-daemon /root/
+#sudo sh -c 'echo "dhcp-range=192.168.122.20,192.168.122.250,8h" >> /etc/dnsmasq.d/ltsp-server-dnsmasq.conf 
+#sudo service dnsmasq restart
