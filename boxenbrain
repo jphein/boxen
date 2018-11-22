@@ -50,4 +50,7 @@ sudo virt-install \
   --pxe \
   --os-variant ubuntu17.10 \
   --wait 0
-echo "Connect to the PXE test client with: virt-viewer --connect qemu:///system pxe"
+echo "Connect to the PXE test client with: virt-viewer --connect qemu:///system pxe &"
+cd
+ln -s /var/lib/tftpboot/ltsp/amd64/lts.conf lts.conf
+echo "Configure your lts.conf with nano -w lts.conf"
