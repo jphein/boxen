@@ -6,15 +6,19 @@
 
 # xfreerdp segfaults if HOME is unset.
 export HOME=${HOME:-/root}
-prepath="/usr/share/ltsp/screen.d/
+
+prepath="/usr/share/ltsp/screen.d"
+
 zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL
+
 if [ "$?" -eq "0" ]
 then 
 
 file=$(zenity --width=360 --height=400 --list --title "Menu <3" --text "May you choose wisely..." --column Option "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
 
 if [ "$file" = "$MENU_ITEM_01" ]; then
-
+  echo $prepath/$MENU_COMMAND
+  sleep 100
   eval exec $prepath/$MENU_COMMAND_01
 
 
