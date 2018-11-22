@@ -10,6 +10,35 @@ export HOME=${HOME:-/root}
 zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL
 if [ "$?" -eq "0" ]
 then 
+
+file=$(zenity --width=360 --height=320 --list --title "Menu <3" --text "May you choose wisely..." --column Option "Ubuntu Desktop" "Windows Cloud Desktop" "MacOS Desktop" "KVM-VDI" "Install boXenbrain to /dev/sda1" "Install boXenbaby to /dev/sda1" "Reboot" "Shutdown" "Root Xterm" "Root Shell")
+
+
+if [ "$file" = "Current accounts" ]; then
+
+    xdg-open /home/bob/money/2011-12_accounts.gnumeric
+
+
+
+elif [ "$file" = "2012 Christmas letter" ]; then
+
+    xdg-open /home/bob/personal/2012_Xmas_letter.odt
+
+
+
+elif [ "$file" = "Flecktones – Cheeseballs in Cowtown" ]; then
+
+    xdg-open /home/bob/music/Fleck/Cheeseballs_in_Cowtown.ogg
+
+
+
+elif [ "$file" = "Free Software Magazine" ]; then
+
+    xdg-open http://www.freesoftwaremagazine.com/
+
+fi
+fi
+else
 #eval exec "/usr/share/ltsp/screen.d/menu"
 chvt $WELCOME_OKVT
 fi
