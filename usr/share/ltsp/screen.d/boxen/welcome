@@ -11,7 +11,7 @@ zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCO
 if [ "$?" -eq "0" ]
 then 
 
-file=$(zenity --width=360 --height=320 --list --title "Menu <3" --text "May you choose wisely..." --column Option "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
+file=$(zenity --width=360 --height=400 --list --title "Menu <3" --text "May you choose wisely..." --column Option "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
 
 if [ "$file" = "$MENU_ITEM_01" ]; then
 
