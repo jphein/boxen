@@ -17,8 +17,8 @@ then
 file=$(zenity --width="$MENU_WIDTH" --height="$MENU_HEIGHT" --list --title "Menu <3" --text "$MENU_TITLE" --column Option "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
 
 if [ "$file" = "$MENU_ITEM_01" ]; then
-  echo $prepath/$MENU_COMMAND
-  sleep 100
+  #echo $prepath/$MENU_COMMAND
+  #sleep 100
   eval exec $prepath/$MENU_COMMAND_01
 
 
