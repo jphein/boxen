@@ -23,6 +23,8 @@ cd ..
 sudo ln -s launch welcome
 sudo ln -s /sbin/shutdown shutdown
 sudo chmod +x rdpgui xfreerdp-prompt launch boxen/welcome
+#Disable Cloud init if using Azure image as your LTSP server
+touch /etc/cloud/cloud-init.disabled
 #Install pxe menu
 cd /etc/ltsp
 mv update-kernels.conf update-kernels.conf.bak
