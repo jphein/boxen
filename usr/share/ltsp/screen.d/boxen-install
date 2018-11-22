@@ -1,0 +1,50 @@
+#!/bin/bash
+###########################################
+# boXen Is called with two variables. 
+# The first is the type of install brain, baby, or clone. 
+# The second is the target. For instance /dev/sda1.
+# e.g. boxen brain /dev/sda1
+
+# brain     | copies using clone, and the boxenbrain install script.
+# baby      | copies using clone, and the boXenbaby install script.
+# clone     | copies PXE booted image to target. 
+#              Uses cp -a /run/initramfs/rofs /target
+#              This can then be used as a vm start image. 
+#              Especially easy if your target is already a KVM virtual machine with a qcow drive.
+
+target=$2
+type=$1
+
+## type Case
+#  brain
+# Calls clone then run boxenbrain install script
+$0 clone $target
+mount $target /mnt 
+cd /usr/share/ltsp/screen.d/boxen/
+wget -N https://raw.githubusercontent.com/jphein/boxen/master/boxenbrain 
+chmod +x boxenbrain
+cp boxenbrain /mnt/
+cd /mnt; for d in proc sys dev dev/pts; do mount --bind /$d $d; done; chroot . /boxenbrain; umount dev/pts dev sys proc
+
+
+#Using NBD? No
+#Where is image?
+#dd if=/dev/$BABY_NBD of=$target
+
+#  baby
+#Where is image?
+#calls clone, and then installs clients
+$0 clone $target
+mount $target /mnt 
+cd /usr/share/ltsp/screen.d/boxen/
+wget -N https://raw.githubusercontent.com/jphein/boxen/master/boxenbaby
+chmod +x boxenbaby
+cp boxenbaby /mnt/
+cd /mnt; for d in proc sys dev dev/pts; do mount --bind /$d $d; done; chroot . /boxenbaby; umount dev/pts dev sys proc
+
+#Using NBD? No
+#dd if=/dev/BRAIN_NBD of=$target
+
+#  clone
+mkfs.ext4 -l boxen $target1
+cp -a /run/initramfs/rofs $target && mount $target /mnt; cd /mnt; for d in proc sys dev dev/pts; do mount --bind /$d $d; done; chroot . dpkg-reconfigure grub-pc; umount dev/pts dev sys proc
