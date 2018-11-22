@@ -54,3 +54,8 @@ echo "Connect to the PXE test client with: virt-viewer --connect qemu:///system 
 cd
 ln -s /var/lib/tftpboot/ltsp/amd64/lts.conf lts.conf
 echo "Configure your lts.conf with nano -w lts.conf"
+
+##After cloning use this
+#mv /var/lib/libvirt/images/pxe.qcow2 ~/Desktop/baby.qcow2
+##Then Expose with NBD 
+#nbd-server 12345 /home/$USER/Desktop/baby.qcow2
