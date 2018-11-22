@@ -11,30 +11,40 @@ zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCO
 if [ "$?" -eq "0" ]
 then 
 
-file=$(zenity --width=360 --height=320 --list --title "Menu <3" --text "May you choose wisely..." --column Option "Ubuntu Desktop" "Windows Cloud Desktop" "MacOS Desktop" "KVM-VDI" "Install boXenbrain to /dev/sda1" "Install boXenbaby to /dev/sda1" "Reboot" "Shutdown" "Root Xterm" "Root Shell")
+file=$(zenity --width=360 --height=320 --list --title "Menu <3" --text "May you choose wisely..." --column Option "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
+
+if [ "$file" = "$MENU_ITEM_01" ]; then
+
+    $MENU_COMMAND_01
 
 
-if [ "$file" = "Current accounts" ]; then
+    elif [ "$file" = "$MENU_ITEM_02" ]; then
 
-    xdg-open /home/bob/money/2011-12_accounts.gnumeric
+    $MENU_COMMAND_02
+    elif [ "$file" = "$MENU_ITEM_03" ]; then
 
+    $MENU_COMMAND_03
+    elif [ "$file" = "$MENU_ITEM_04" ]; then
 
+    $MENU_COMMAND_04
+    elif [ "$file" = "$MENU_ITEM_05" ]; then
 
-elif [ "$file" = "2012 Christmas letter" ]; then
+    $MENU_COMMAND_05
+    elif [ "$file" = "$MENU_ITEM_06" ]; then
 
-    xdg-open /home/bob/personal/2012_Xmas_letter.odt
+    $MENU_COMMAND_06
+    elif [ "$file" = "$MENU_ITEM_07" ]; then
 
+    $MENU_COMMAND_07
+    elif [ "$file" = "$MENU_ITEM_08" ]; then
 
+    $MENU_COMMAND_08
+    elif [ "$file" = "$MENU_ITEM_09" ]; then
 
-elif [ "$file" = "Flecktones – Cheeseballs in Cowtown" ]; then
+    $MENU_COMMAND_09
+    elif [ "$file" = "$MENU_ITEM_10" ]; then
 
-    xdg-open /home/bob/music/Fleck/Cheeseballs_in_Cowtown.ogg
-
-
-
-elif [ "$file" = "Free Software Magazine" ]; then
-
-    xdg-open http://www.freesoftwaremagazine.com/
+    $MENU_COMMAND_10
 
 fi
 fi
