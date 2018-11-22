@@ -6,7 +6,7 @@
 
 # xfreerdp segfaults if HOME is unset.
 export HOME=${HOME:-/root}
-
+cd /usr/share/ltsp/screen.d/
 zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL
 if [ "$?" -eq "0" ]
 then 
@@ -15,36 +15,36 @@ file=$(zenity --width=360 --height=320 --list --title "Menu <3" --text "May you 
 
 if [ "$file" = "$MENU_ITEM_01" ]; then
 
-    $MENU_COMMAND_01
+    ./$MENU_COMMAND_01
 
 
     elif [ "$file" = "$MENU_ITEM_02" ]; then
 
-    $MENU_COMMAND_02
+    ./$MENU_COMMAND_02
     elif [ "$file" = "$MENU_ITEM_03" ]; then
 
-    $MENU_COMMAND_03
+    ./$MENU_COMMAND_03
     elif [ "$file" = "$MENU_ITEM_04" ]; then
 
-    $MENU_COMMAND_04
+    ./$MENU_COMMAND_04
     elif [ "$file" = "$MENU_ITEM_05" ]; then
 
-    $MENU_COMMAND_05
+    ./$MENU_COMMAND_05
     elif [ "$file" = "$MENU_ITEM_06" ]; then
 
-    $MENU_COMMAND_06
+    ./$MENU_COMMAND_06
     elif [ "$file" = "$MENU_ITEM_07" ]; then
 
-    $MENU_COMMAND_07
+    ./$MENU_COMMAND_07
     elif [ "$file" = "$MENU_ITEM_08" ]; then
 
-    $MENU_COMMAND_08
+    ./$MENU_COMMAND_08
     elif [ "$file" = "$MENU_ITEM_09" ]; then
 
-    $MENU_COMMAND_09
+    ./MENU_COMMAND_09
     elif [ "$file" = "$MENU_ITEM_10" ]; then
 
-    $MENU_COMMAND_10
+    ./$MENU_COMMAND_10
 
 fi
 fi
