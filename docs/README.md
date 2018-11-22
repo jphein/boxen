@@ -38,18 +38,20 @@ Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Installation:
-If you already have a BoXenbrain on your network, simply plug your second in, and boot to the PXE menu where you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
+If you already have a BoXenbrain on your network, simply plug your second in, and boot to the menu. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
 * Install Ubuntu 18.04.1 Desktop Minimal Install.
-* Run the install script [install]
+* Git clone the repository 
+* Run the install script [install] https://github.com/jphein/boxen/blob/master/boxenbrain
 
-Manual install guide resided here: [guide]
+Manual install guide resides here: [guide] https://jphein.com/how-to-create-infinite-windows-cloud-desktops-with-boxenlinux/
+
+Roadmap and Feature Board: https://trello.com/b/gEleKfHN/boxenlinux 
+Slack Channel: 
 
 Incomplete List of projects utilized in BoXenLinux: Ubuntu, LTSP, KVM, FreeRDP, KVM-VDI, OpenVPN, and so many more! Thank you!!! 
 
 Packages on top of the Ubuntu 18.04.1 Desktop minimal install: ssh virt-manager ltsp-server-standalone ltsp-client epoptes dnsmasq xfreerdp grub-ipxe x2goserver git byobu glusterfs-server ctdb apt-cacher
-
-Roadmap: https://trello.com/b/gEleKfHN/boxenlinux 
 
 Interesting Projects:
 
@@ -84,6 +86,9 @@ High performance, multi-platform VNC client and server
 iPXE Prebuilt binary web interface
 
 * Seitanas / kvm-vdi
+
+* FOGProject / fogproject
+An open source computer cloning & management system
 
 * www.smartos.org
 * www.foss-cloud.org/
