@@ -46,7 +46,17 @@ If you already have a BoXenbrain on your network, simply plug your second in, an
 
 Manual install guide resides here: [guide] https://jphein.com/how-to-create-infinite-windows-cloud-desktops-with-boxenlinux/
 
+Update BoXenBrain:
+```sh
+#Update from git
+sudo apt --yes install git
+git clone https://github.com/jphein/boxen.git 
+chmod u+x boxen/brain-update
+sudo boxen/brain-update
+```
+
 Roadmap and Feature Board: https://trello.com/b/gEleKfHN/boxenlinux 
+
 Slack Channel: 
 
 Incomplete List of projects utilized in BoXenLinux: Ubuntu, LTSP, KVM, FreeRDP, KVM-VDI, OpenVPN, and so many more! Thank you!!! 
@@ -96,6 +106,7 @@ An open source computer cloning & management system
 * www.openmediavault.org/
 * www.nas4free.org/
 * www.openfiler.org
+* https://kubernetes.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/
 
 Once can initiate the below commands in a terminal to copy the config files from this repository to keep updated:
 Not working
