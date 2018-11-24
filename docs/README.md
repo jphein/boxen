@@ -37,16 +37,21 @@ welcome - Gui Welcome window to display a welcome URL using zenity
 Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
-Installation:
+Install BoXenbrain:
 If you already have a BoXenbrain on your network, simply plug your second in, and boot to the menu. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
 * Install Ubuntu 18.04.1 Desktop Minimal Install.
-* Git clone the repository 
-* Run the install script [install] https://github.com/jphein/boxen/blob/master/boxenbrain
+* After install, run in Terminal:
+```sh
+sudo apt --yes install git #Install git
+git clone https://github.com/jphein/boxen.git #Git clone the BoXenLinux repository 
+chmod u+x boxen/boxenbrain #Make install executable
+boxen/boxenbrain #Run the install script [install] https://github.com/jphein/boxen/blob/master/boxenbrain
+```
 
 Manual install guide resides here: [guide] https://jphein.com/how-to-create-infinite-windows-cloud-desktops-with-boxenlinux/
 
-Update BoXenBrain:
+Update BoXenbrain:
 ```sh
 #Update from git
 sudo apt --yes install git
