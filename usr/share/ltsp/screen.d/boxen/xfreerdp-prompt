@@ -1,4 +1,19 @@
 #!/bin/bash
+#
+#
+# Copyright (c) 2011 Alkis Georgopoulos <http://alkisg.mysch.gr>
+#
+# This software is licensed under the GNU General Public License version 2,
+# the full text of which can be found in the COPYING file.
+
+. /usr/share/ltsp/screen-x-common
+# xfreerdp segfaults if HOME is unset.
+export HOME=${HOME:-/root}
+
+# Make XINITRC_DAEMON default to "True", to prevent X from restarting after
+# logout. If you don't want that, force XINITRC_DAEMON=False in lts.conf.
+export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
+
 #(sleep 1 && wmctrl -F -a "Username" -b add,above) &
 #(sleep 1 && wmctrl -F -a "Password" -b add,above) &
 #(while ! wmctrl -F -a "Username" -b add,above;do sleep 1;done) &
@@ -6,7 +21,7 @@
 #wm2 & # No Window decorations
 
 #zenity --text-info --title="Welcome to BoXen Linux" --width=600 --height=600  --html --url="https://jphein.com/boxen"
-xfreerdp-nightly $* \
+xfreerdp-nightly $* $RDP_OPTIONS $RDP_SERVER \
 /u:$(zenity \
 --entry \
 --title="Username" \
