@@ -11,9 +11,9 @@ zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCO
 
 if [ "$?" -eq "0" ]
 then 
-  #chvt $WELCOME_OKVT
+  chvt $WELCOME_OKVT
   #/usr/share/ltsp/screen.d/boxen/guimenu
-  /usr/share/ltsp/screen.d/boxen/xfreerdp-prompt
+  #/usr/share/ltsp/screen.d/boxen/xfreerdp-prompt
 else
   chvt $WELCOME_CANCELVT
 fi
