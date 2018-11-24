@@ -61,7 +61,7 @@ chmod u+x boxen/boxenbrain-update
 ```
 
 Install BoXenbaby:
-If you already have a BoXenbrain on your network. Simply plug your client in, and boot to the menu. There you will be presented with an option to install BoXenbaby. However, if this is a wireless or remote client you need to follow the steps below.
+If you already have a BoXenbrain on your network. Simply plug your client in, and boot to the menu. There you will be presented with an option to install BoXenbaby. However, if this wireless or remote client is not geograpically local you need to follow the steps below.
 * Download Ubuntu Desktop 18.10 ISO here:
 * Install Ubuntu 18.10 Desktop Minimal Install.
 * After install, run in Terminal:
