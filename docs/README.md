@@ -46,7 +46,7 @@ If you already have a BoXenbrain on your network, simply plug your second in, an
 sudo apt --yes install git #Install git
 git clone https://github.com/jphein/boxen.git #Git clone the BoXenLinux repository 
 chmod u+x boxen/boxenbrain #Make install executable
-boxen/boxenbrain #Run the install script [install] https://github.com/jphein/boxen/blob/master/boxenbrain
+./boxen/boxenbrain #Run the install script [install] https://github.com/jphein/boxen/blob/master/boxenbrain
 ```
 
 Manual install guide resides here: [guide] https://jphein.com/how-to-create-infinite-windows-cloud-desktops-with-boxenlinux/
@@ -57,7 +57,7 @@ Update BoXenbrain:
 sudo apt --yes install git
 git clone https://github.com/jphein/boxen.git 
 chmod u+x boxen/boxenbrain-update
-sudo boxen/boxenbrain-update
+sudo ./boxen/boxenbrain-update
 ```
 
 Roadmap and Feature Board: https://trello.com/b/gEleKfHN/boxenlinux 
