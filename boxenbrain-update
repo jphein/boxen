@@ -1,7 +1,9 @@
 #!/bin/bash
+sudo apt update
+sudo apt upgrade
 git pull
-rsync -anv * / --exclude=".git" --exclude="boxen*" --exclude="docs" --exclude="README.md" 
-chmod +x /usr/share/ltsp/screen.d/* -R
-/usr/share/ltsp/update-kernels
-ltsp-update-image -c /
-ltsp-update-kernels
+sudo rsync -anv * / --exclude=".git" --exclude="boxen*" --exclude="docs" --exclude="README.md" 
+sudo chmod +x /usr/share/ltsp/screen.d/* -R
+sudo /usr/share/ltsp/update-kernels
+sudo ltsp-update-image -c /
+sudo ltsp-update-kernels
