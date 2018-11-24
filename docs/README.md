@@ -38,7 +38,7 @@ Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Install BoXenbrain:
-If you already have a BoXenbrain on your network, simply plug your second server in, and boot to the menu. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
+If you already have a BoXenbrain on your network, simply plug your second server in, and log in. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
 * Install Ubuntu 18.04.1 Desktop Minimal Install.
 * After install, run in Terminal:
