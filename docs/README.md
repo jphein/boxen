@@ -113,18 +113,6 @@ An open source computer cloning & management system
 * www.openfiler.org
 * https://kubernetes.io/blog/2018/10/02/building-a-network-bootable-server-farm-for-kubernetes-with-ltsp/
 
-Once can initiate the below commands in a terminal to copy the config files from this repository to keep updated:
-Not working
-```sh
-cd /
-sudo apt install git
-sudo git init
-sudo git remote add origin https://github.com/jphein/boxen
-sudo pull origin master
-sudo chmod +x /usr/share/ltsp/screen.d/*
-sudo ltsp-update-image -c /
-```
-
 The registered trademark Linux® is used pursuant to a sublicense from the Linux Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 © 2018 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
 
