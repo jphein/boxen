@@ -1,0 +1,5 @@
+#!/bin/bash
+git pull
+rsync -anv boxen/* / --exclude=".git" 
+chmod +x /usr/share/ltsp/screen.d/* -R
+ltsp-update-image -c /
