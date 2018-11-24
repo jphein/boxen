@@ -2,10 +2,10 @@
 
 #Read lts.conf for variables
 . /usr/share/ltsp/ltsp_config
-. /usr/share/ltsp/screen-x-common
+#. /usr/share/ltsp/screen-x-common
 
 # xfreerdp segfaults if HOME is unset.
-export HOME=${HOME:-/root}
+#export HOME=${HOME:-/root}
 
 prepath="/usr/share/ltsp/screen.d"
 
