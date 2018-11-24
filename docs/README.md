@@ -40,7 +40,7 @@ https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 Install BoXenbrain:
 If you already have a BoXenbrain on your network, simply plug your second server in, and log in to a Ubuntu fat client session. There to install Ubuntu, you you can run:
 ```sh
-ubiquity gtk-ui
+ubiquity gtk_ui
 ```
 However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
@@ -70,7 +70,7 @@ chmod u+x boxenbrain-update
 Install BoXenbaby:
 If you already have a BoXenbrain on your network. Simply plug your client in, and log in. There to install Ubuntu, you you can run:
 ```sh
-ubiquity gtk-ui
+ubiquity gtk_ui
 ``` 
 However, if this wireless or remote client is not geograpically local you need to follow the steps below.
 * Download Ubuntu Desktop 18.10 ISO here:
