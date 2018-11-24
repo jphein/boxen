@@ -7,7 +7,7 @@
 # xfreerdp segfaults if HOME is unset.
 #export HOME=${HOME:-/root}
 
-prepath="/usr/share/ltsp/screen.d"
+prepath="/usr/share/ltsp/screen.d/boxen"
 
 zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCOME_HEIGHT  --html --url=$WELCOME_URL
 
