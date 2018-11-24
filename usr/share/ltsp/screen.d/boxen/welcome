@@ -36,6 +36,8 @@ then
     $prepath/$MENU_COMMAND_09
   elif [ "$file" = "$MENU_ITEM_10" ]; then
     $prepath/$MENU_COMMAND_10
+  else
+    echo "error"
   fi
 else
   #eval exec "/usr/share/ltsp/screen.d/menu"
