@@ -13,46 +13,31 @@ zenity --text-info --title=$WELCOME_TITLE --width=$WELCOME_WIDTH --height=$WELCO
 
 if [ "$?" -eq "0" ]
 then 
+  file=$(zenity --width="$MENU_WIDTH" --height="$MENU_HEIGHT" --list --title "Menu <3" --text "$MENU_TITLE" --column Desktop "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
 
-file=$(zenity --width="$MENU_WIDTH" --height="$MENU_HEIGHT" --list --title "Menu <3" --text "$MENU_TITLE" --column Desktop "$MENU_ITEM_01" "$MENU_ITEM_02" "$MENU_ITEM_03" "$MENU_ITEM_04" "$MENU_ITEM_05" "$MENU_ITEM_06" "$MENU_ITEM_07" "$MENU_ITEM_08" "$MENU_ITEM_09" "$MENU_ITEM_10")
-
-if [ "$file" = "$MENU_ITEM_01" ]; then
-  #echo $prepath/$MENU_COMMAND
-  #sleep 100
-  eval exec $prepath/$MENU_COMMAND_01
-
-
-    elif [ "$file" = "$MENU_ITEM_02" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_02
-    elif [ "$file" = "$MENU_ITEM_03" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_03
-    elif [ "$file" = "$MENU_ITEM_04" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_04
-    elif [ "$file" = "$MENU_ITEM_05" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_05
-    elif [ "$file" = "$MENU_ITEM_06" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_06
-    elif [ "$file" = "$MENU_ITEM_07" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_07
-    elif [ "$file" = "$MENU_ITEM_08" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_08
-    elif [ "$file" = "$MENU_ITEM_09" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_09
-    elif [ "$file" = "$MENU_ITEM_10" ]; then
-
-    eval exec $prepath/$MENU_COMMAND_10
-
-fi
-fi
+  if [ "$file" = "$MENU_ITEM_01" ]; then
+    zenity --info --text "$prepath/$MENU_COMMAND"
+    $prepath/$MENU_COMMAND_01
+  elif [ "$file" = "$MENU_ITEM_02" ]; then
+    $prepath/$MENU_COMMAND_02
+  elif [ "$file" = "$MENU_ITEM_03" ]; then
+    $prepath/$MENU_COMMAND_03
+  elif [ "$file" = "$MENU_ITEM_04" ]; then
+    $prepath/$MENU_COMMAND_04
+  elif [ "$file" = "$MENU_ITEM_05" ]; then
+    $prepath/$MENU_COMMAND_05
+  elif [ "$file" = "$MENU_ITEM_06" ]; then
+    $prepath/$MENU_COMMAND_06
+  elif [ "$file" = "$MENU_ITEM_07" ]; then
+    $prepath/$MENU_COMMAND_07
+  elif [ "$file" = "$MENU_ITEM_08" ]; then
+    $prepath/$MENU_COMMAND_08
+  elif [ "$file" = "$MENU_ITEM_09" ]; then
+    $prepath/$MENU_COMMAND_09
+  elif [ "$file" = "$MENU_ITEM_10" ]; then
+    $prepath/$MENU_COMMAND_10
+  fi
 else
-#eval exec "/usr/share/ltsp/screen.d/menu"
-chvt $WELCOME_OKVT
+  #eval exec "/usr/share/ltsp/screen.d/menu"
+  chvt $WELCOME_OKVT
 fi
