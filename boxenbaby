@@ -1,2 +1,8 @@
 #!bin/bash
 ## Install clients
+sudo sh -c 'echo "deb http://pub.freerdp.com/repositories/deb/$(lsb_release -cs)/ freerdp-nightly main" >> /etc/apt/sources.list.d/freerdp-nightly.list' 
+wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add - 
+sudo apt update
+sudo apt upgrade
+sudo apt --yes install xfreerdp-nightly
+
