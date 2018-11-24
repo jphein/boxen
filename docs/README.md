@@ -56,8 +56,8 @@ Update BoXenbrain:
 #Update from git
 sudo apt --yes install git
 git clone https://github.com/jphein/boxen.git 
-chmod u+x boxen/brain-update
-sudo boxen/brain-update
+chmod u+x boxen/boxenbrain-update
+sudo boxen/boxenbrain-update
 ```
 
 Roadmap and Feature Board: https://trello.com/b/gEleKfHN/boxenlinux 
