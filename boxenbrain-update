@@ -1,5 +1,7 @@
 #!/bin/bash
 git pull
-rsync -anv boxen/* / --exclude=".git" 
+rsync -anv * / --exclude=".git" --exclude="boxen*"
 chmod +x /usr/share/ltsp/screen.d/* -R
+/usr/share/ltsp/update-kernels
 ltsp-update-image -c /
+ltsp-update-kernels
