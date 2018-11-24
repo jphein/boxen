@@ -23,7 +23,7 @@ export XINITRC_DAEMON="${XINITRC_DAEMON-True}"
 #wm2 & # No Window decorations
 
 #zenity --text-info --title="Welcome to BoXen Linux" --width=600 --height=600  --html --url="https://jphein.com/boxen"
-xfreerdp-nightly $* $RDP_OPTIONS $RDP_SERVER \
+xfreerdp-nightly $* $RDP_OPTIONS v:/$RDP_SERVER \
 /u:$(zenity \
 --entry \
 --title="Username" \
