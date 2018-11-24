@@ -16,7 +16,7 @@ LTSP already comes with these client scripts:
 ```sh
 kiosk – Firefox running locally on thin client.
 ldm – Linux desktop running remotely on local server.
-menu – Interactive Menu
+menu – Interactive Menu based on Whiptail
 shell – Drop to root bash shell running locally on thin client.
 ssh – Secure Shell for remote terminal on local or remote server.
 telnet – unsecure ssh 😉 running remotely on local or remote server.
@@ -27,12 +27,12 @@ xterm – xterm terminal running locally on thin client.
 This has been furthered by the BoXenLinux project to include:
 ```sh
 freerdp-nightly – Nightly builds of xfreerdp to take advantage of Microphone redirection and the latest graphics codecs.
-rdpgui – Gui for displaying a welcome website, and to prompt for credentials when using xfreerdp-nightly.
+rdpgui – Gui to prompt for credentials when using xfreerdp-nightly.
 vdi – KVM-VDI LTSP client, see github.com/Seita…
 vnc – VNCviewer for remote desktop on local or remote Android or MacOS computers.
 spice – virt-viewer for KVM Virtualization software. Can provide remote access to local or remote desktops of ANY kind you can virtualize.
 x2go - Linux remote desktop for local or remote servers. 
-welcome - Gui Welcome window to display a welcome URL using zenity
+welcome - Gui Welcome window to display a welcome URL using zenity, and interactive GUI menu to replace the builtin text menu
 ```
 Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
