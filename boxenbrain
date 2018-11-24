@@ -1,7 +1,14 @@
 #!/bin/bash
+# SSH
 sudo apt install ssh
+# Ubiquity
+sudo apt-get install ubiquity ubiquity-frontend-gtk
+# ts.sch.gr repos
 sudo add-apt-repository --yes ppa:ts.sch.gr #The Greek Schools repository
-sudo apt install --yes --install-recommends ltsp-server-standalone ltsp-client epoptes virt-manager
+# LTSP
+sudo apt install --yes --install-recommends ltsp-server-standalone ltsp-client epoptes 
+#KVM
+sudo apt install virt-manager
 sudo ltsp-config dnsmasq --enable-dns
 sudo service dnsmasq restart
 sudo gpasswd -a ${SUDO_USER:-$USER} epoptes
@@ -37,12 +44,17 @@ sudo wget https://raw.githubusercontent.com/jphein/boxen/master/var/lib/tftpboot
 ##Install X2Go Server
 sudo add-apt-repository --yes ppa:x2go/stable
 sudo apt-get install --yes --install-recommends x2goserver x2gomatebindings
+cd
+ln -s /var/lib/tftpboot/ltsp/amd64/lts.conf lts.conf
+echo "Configure your lts.conf with nano -w lts.conf"
 echo "Done installing BoXen Brain!"
+
 ###dnsmasq hack for testing
 sudo killall dnsmasq
 sudo mv /etc/dnsmasq.d/libvirt-daemon /root/
 sudo sh -c 'echo "dhcp-range=192.168.122.20,192.168.122.250,8h" >> /etc/dnsmasq.d/ltsp-server-dnsmasq.conf 
 sudo service dnsmasq restart
+############################
 #Create the PXE test KVM client
 sudo virt-install \
   --name pxe \
@@ -53,9 +65,11 @@ sudo virt-install \
   --os-variant ubuntu17.10 \
   --wait 0
 echo "Connect to the PXE test client with: virt-viewer --connect qemu:///system pxe &"
-cd
-ln -s /var/lib/tftpboot/ltsp/amd64/lts.conf lts.conf
-echo "Configure your lts.conf with nano -w lts.conf"
+
+
+
+# Virtual thin client: 
+#kvm -m 256 -vga vmware -ctrl-grab -no-shutdown -net nic,model=virtio -net user,tftp=/var/lib/tftpboot,bootfile=/ltsp/i386/pxelinux.0
 
 ##After cloning use this
 #mv /var/lib/libvirt/images/pxe.qcow2 ~/Desktop/baby.qcow2
