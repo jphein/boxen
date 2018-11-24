@@ -38,7 +38,7 @@ Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Install BoXenbrain:
-If you already have a BoXenbrain on your network, simply plug your second in, and boot to the menu. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
+If you already have a BoXenbrain on your network, simply plug your second server in, and boot to the menu. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
 * Install Ubuntu 18.04.1 Desktop Minimal Install.
 * After install, run in Terminal:
@@ -58,6 +58,18 @@ sudo apt --yes install git
 git clone https://github.com/jphein/boxen.git 
 chmod u+x boxen/boxenbrain-update
 ./boxen/boxenbrain-update
+```
+
+Install BoXenbaby:
+If you already have a BoXenbrain on your network. Simply plug your client in, and boot to the menu. There you will be presented with an option to install BoXenbaby. However, if this is a wireless or remote client you need to follow the steps below.
+* Download Ubuntu Desktop 18.10 ISO here:
+* Install Ubuntu 18.10 Desktop Minimal Install.
+* After install, run in Terminal:
+```sh
+sudo apt --yes install git #Install git
+git clone https://github.com/jphein/boxen.git #Git clone the BoXenLinux repository 
+chmod u+x boxen/boxenbaby #Make install executable
+./boxen/boxenbaby #Run the install script [install] https://github.com/jphein/boxen/blob/master/boxenbrain
 ```
 
 Roadmap and Feature Board: https://trello.com/b/gEleKfHN/boxenlinux 
