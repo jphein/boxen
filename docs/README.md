@@ -38,10 +38,15 @@ Most of the configuration is done in the lts.conf file
 https://github.com/jphein/boxen/blob/master/var/lib/tftpboot/amd64/lts.conf
 
 Install BoXenbrain:
-If you already have a BoXenbrain on your network, simply plug your second server in, and log in. There you will be presented with an option to install BoXenbrain. However, if this is your first brain on the network you need to follow the steps below.
+If you already have a BoXenbrain on your network, simply plug your second server in, and log in to a Ubuntu fat client session. There to install Ubuntu, you you can run:
+```sh
+ubiquity gtk-ui
+```
+However, if this is your first brain on the network you need to follow the steps below.
 * Download Ubuntu Desktop 18.04.1 ISO here: [Ubuntu] 
 * Install Ubuntu 18.04.1 Desktop Minimal Install.
-* After install, run in Terminal:
+
+* After install either way, run in Terminal:
 ```sh
 sudo apt --yes install git #Install git
 git clone https://github.com/jphein/boxen.git #Git clone the BoXenLinux repository 
@@ -63,10 +68,15 @@ chmod u+x boxenbrain-update
 ```
 
 Install BoXenbaby:
-If you already have a BoXenbrain on your network. Simply plug your client in, and boot to the menu. There you will be presented with an option to install BoXenbaby. However, if this wireless or remote client is not geograpically local you need to follow the steps below.
+If you already have a BoXenbrain on your network. Simply plug your client in, and log in. There to install Ubuntu, you you can run:
+```sh
+ubiquity gtk-ui
+``` 
+However, if this wireless or remote client is not geograpically local you need to follow the steps below.
 * Download Ubuntu Desktop 18.10 ISO here:
 * Install Ubuntu 18.10 Desktop Minimal Install.
-* After install, run in Terminal:
+
+* After install either way, run in Terminal:
 ```sh
 sudo apt --yes install git #Install git
 git clone https://github.com/jphein/boxen.git #Git clone the BoXenLinux repository 
